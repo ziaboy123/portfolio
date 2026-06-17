@@ -111,7 +111,7 @@ export default function Navigation() {
               fontWeight: 600,
             }}
           >
-            NEXUS
+            D.ZIA
           </span>
         </a>
 

@@ -220,7 +220,7 @@ export default function Hero() {
               textTransform: 'uppercase',
             }}
           >
-            System v1.0 — Active
+            daniyalzia.co.uk — Active
           </span>
         </div>
 
@@ -238,7 +238,7 @@ export default function Hero() {
             transition: 'opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s',
           }}
         >
-          NEXUS
+          DANIYAL ZIA
         </h1>
 
         {/* Tagline */}
@@ -357,9 +357,9 @@ export default function Hero() {
           }}
         >
           {[
-            { label: 'Projects', value: '3+' },
-            { label: 'Systems Online', value: '1' },
-            { label: 'Est.', value: '2024' },
+            { label: 'Projects', value: '3' },
+            { label: 'Systems Online', value: '4' },
+            { label: 'Est.', value: '2026' },
             { label: 'Status', value: 'Building' },
           ].map(({ label, value }) => (
             <div key={label}>

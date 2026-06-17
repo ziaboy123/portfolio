@@ -144,42 +144,43 @@ function HardwareCard({ name, role, specs, delay = 0 }) {
 }
 
 const SERVICES = [
-  { name: 'Service Alpha',     type: 'Web App',   status: 'placeholder', uptime: '—', latency: '—ms' },
-  { name: 'Service Beta',      type: 'API',       status: 'placeholder', uptime: '—', latency: '—ms' },
-  { name: 'Database Primary',  type: 'Database',  status: 'placeholder', uptime: '—', latency: '—ms' },
-  { name: 'Cache Layer',       type: 'Cache',     status: 'placeholder', uptime: '—', latency: '—ms' },
-  { name: 'Reverse Proxy',     type: 'Network',   status: 'placeholder', uptime: '—', latency: '—ms' },
+  { name: 'Portfolio',         type: 'Web App',   status: 'online',  uptime: '—', latency: '—ms' },
+  { name: 'DeckForge',         type: 'Web App',   status: 'online',  uptime: '—', latency: '—ms' },
+  { name: 'WatchMatch',        type: 'Web App',   status: 'online',  uptime: '—', latency: '—ms' },
+  { name: 'Cipher',            type: 'Chat',      status: 'online',  uptime: '—', latency: '—ms' },
+  { name: 'PostgreSQL',        type: 'Database',  status: 'online',  uptime: '—', latency: '—ms' },
+  { name: 'Cloudflare Tunnel', type: 'Network',   status: 'online',  uptime: '—', latency: '—ms' },
 ];
 
 const HARDWARE = [
   {
-    name: 'Primary Server',
-    role: 'Compute Node',
+    name: 'apps (LXC)',
+    role: 'App Server — pve1',
     specs: [
-      { k: 'CPU', v: '— cores' },
-      { k: 'RAM', v: '— GB' },
-      { k: 'Storage', v: '— TB' },
-      { k: 'OS', v: 'Linux' },
+      { k: 'CPU', v: '2 vCPU' },
+      { k: 'RAM', v: '4 GB' },
+      { k: 'Disk', v: '40 GB' },
+      { k: 'OS', v: 'Ubuntu 22.04' },
     ],
   },
   {
-    name: 'Network Switch',
-    role: 'Core Network',
+    name: 'Proxmox Cluster',
+    role: 'Hypervisor',
     specs: [
-      { k: 'Ports', v: '—' },
-      { k: 'Speed', v: '—Gbps' },
-      { k: 'VLAN', v: 'Yes' },
-      { k: 'Managed', v: 'Yes' },
+      { k: 'Nodes', v: '3' },
+      { k: 'Version', v: 'PVE 9.1' },
+      { k: 'Active', v: 'pve1, pve2' },
+      { k: 'Network', v: 'Unifi' },
     ],
   },
   {
-    name: 'Storage Array',
-    role: 'NAS',
+    name: 'Cloudflare',
+    role: 'Edge / DNS',
     specs: [
-      { k: 'Raw', v: '— TB' },
-      { k: 'RAID', v: '—' },
-      { k: 'Protocol', v: 'NFS/SMB' },
-      { k: 'Redundancy', v: 'Yes' },
+      { k: 'Domain', v: 'daniyalzia.co.uk' },
+      { k: 'Tunnel', v: 'Active' },
+      { k: 'Proxy', v: 'Enabled' },
+      { k: 'Port Forward', v: 'None' },
     ],
   },
 ];
@@ -215,7 +216,7 @@ export default function Infrastructure() {
             <SectionHeader
               eyebrow="Infrastructure"
               title="The Stack"
-              description="Homelab and self-hosted infrastructure. All components are placeholders — designed for live API integration."
+              description="Self-hosted on a Proxmox homelab cluster, routed through Cloudflare Tunnel. Services are live — uptime and metrics monitoring coming soon."
             />
             <div
               className="mono"
@@ -239,7 +240,7 @@ export default function Infrastructure() {
                   background: 'var(--text-faint)', display: 'inline-block',
                 }}
               />
-              DATA: OFFLINE — AWAITING INTEGRATION
+              LIVE MONITORING — COMING SOON
             </div>
           </div>
         </div>
@@ -253,12 +254,12 @@ export default function Infrastructure() {
             marginBottom: '40px',
           }}
         >
-          <MetricTile label="Nodes" value="—" subtext="AWAITING DATA" status="offline" />
-          <MetricTile label="Services" value="—" subtext="AWAITING DATA" status="offline" />
-          <MetricTile label="Uptime" value="—" unit="%" subtext="AWAITING DATA" status="offline" />
-          <MetricTile label="Network In" value="—" unit="Mbps" subtext="AWAITING DATA" status="offline" />
-          <MetricTile label="Network Out" value="—" unit="Mbps" subtext="AWAITING DATA" status="offline" />
-          <MetricTile label="Alerts" value="—" subtext="AWAITING DATA" status="offline" />
+          <MetricTile label="Nodes" value="1" subtext="APP CONTAINER" status="online" />
+          <MetricTile label="Services" value="6" subtext="ALL RUNNING" status="online" />
+          <MetricTile label="Uptime %" value="—" subtext="MONITORING SOON" status="offline" />
+          <MetricTile label="Network In" value="—" unit="Mbps" subtext="MONITORING SOON" status="offline" />
+          <MetricTile label="Network Out" value="—" unit="Mbps" subtext="MONITORING SOON" status="offline" />
+          <MetricTile label="Alerts" value="0" subtext="ALL CLEAR" status="online" />
         </div>
 
         {/* Main grid: services + resources */}
@@ -300,7 +301,7 @@ export default function Infrastructure() {
                 key={svc.name}
                 name={svc.name}
                 type={svc.type}
-                status="offline"
+                status={svc.status}
                 uptime="—"
                 latency="—"
                 delay={i * 0.06}
@@ -316,7 +317,7 @@ export default function Infrastructure() {
                 borderTop: '1px solid var(--border-subtle)',
               }}
             >
-              ↳ CONNECT API TO POPULATE LIVE DATA
+              ↳ UPTIME & LATENCY MONITORING — COMING SOON
             </div>
           </div>
 
