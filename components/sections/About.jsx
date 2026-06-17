@@ -33,7 +33,7 @@ const DISCIPLINES = [
   {
     id: 'cs',
     label: 'Computer Science',
-    detail: 'Currently studying CS and using everything I learn to build real things. Theory and practice together — it's the only way it sticks.',
+    detail: "Currently studying CS and using everything I learn to build real things. Theory and practice together — it's the only way it sticks.",
   },
   {
     id: 'infra',
