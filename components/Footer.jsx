@@ -41,7 +41,7 @@ export default function Footer() {
             className="mono"
             style={{ fontSize: '11px', color: 'var(--text-muted)', letterSpacing: '0.15em' }}
           >
-            NEXUS
+            D.ZIA
           </span>
           <span style={{ color: 'var(--text-faint)', fontSize: '12px' }}>·</span>
           <span

@@ -7,6 +7,7 @@ export default function MetricTile({ label, value, unit, subtext, icon, status =
 
   const statusColors = {
     nominal: 'var(--text-muted)',
+    online:  '#22c55e',
     good:    '#22c55e',
     warning: '#f59e0b',
     critical: '#dc2626',
