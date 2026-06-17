@@ -50,23 +50,6 @@ const PROJECTS = [
       { label: 'Sign-up', value: 'None' },
     ],
   },
-  {
-    id: 'homeserver',
-    eyebrow: 'INFRASTRUCTURE',
-    name: 'Home Server',
-    status: 'active',
-    url: null,
-    urlNote: 'SELF-HOSTED',
-    screenshot: null,
-    description:
-      'A self-managed home server running all four projects. Handles routing, process management, and uptime — built and maintained personally. No cloud providers, no managed hosting.',
-    stack: ['Linux', 'Nginx', 'PM2', 'Cloudflare'],
-    metrics: [
-      { label: 'Apps Hosted', value: '4' },
-      { label: 'Cloud Services', value: 'None' },
-      { label: 'Managed by', value: 'Me' },
-    ],
-  },
 ];
 
 function useReveal(threshold = 0.1) {
