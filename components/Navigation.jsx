@@ -21,11 +21,11 @@ export default function Navigation() {
   }, []);
 
   useEffect(() => {
-    const sections = ['projects', 'about', 'timeline', 'contact'];
+    const sections = ['hero', 'projects', 'about', 'timeline', 'contact'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
+          if (e.isIntersecting) setActive(e.target.id === 'hero' ? '' : e.target.id);
         });
       },
       { rootMargin: '-40% 0px -55% 0px' }
