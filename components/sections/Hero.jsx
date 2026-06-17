@@ -335,7 +335,7 @@ export default function Hero() {
         >
           {[
             { label: 'Projects', value: '3' },
-            { label: 'Self-Hosted', value: 'Yes' },
+            { label: 'Languages', value: '3' },
             { label: 'Est.', value: '2026' },
             { label: 'Status', value: 'Building' },
           ].map(({ label, value }) => (
