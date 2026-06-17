@@ -28,6 +28,7 @@ function ServiceRow({ name, type, status, uptime, latency, delay = 0 }) {
   return (
     <div
       ref={ref}
+      className="svc-row-grid"
       style={{
         display: 'grid',
         gridTemplateColumns: '2fr 100px 80px 80px 80px',
@@ -264,6 +265,7 @@ export default function Infrastructure() {
 
         {/* Main grid: services + resources */}
         <div
+          className="infra-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 320px',
@@ -290,7 +292,7 @@ export default function Infrastructure() {
               <span className="mono" style={{ fontSize: '11px', letterSpacing: '0.15em', color: 'var(--text-muted)' }}>
                 SERVICE STATUS
               </span>
-              <div style={{ display: 'grid', gridTemplateColumns: '2fr 100px 80px 80px 80px', gap: '16px', flex: 1, paddingLeft: '32px' }}>
+              <div className="svc-row-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 100px 80px 80px 80px', gap: '16px', flex: 1, paddingLeft: '32px' }}>
                 {['SERVICE', 'TYPE', 'STATUS', 'UPTIME', 'LATENCY'].map((h) => (
                   <span key={h} className="mono" style={{ fontSize: '10px', color: 'var(--text-faint)', letterSpacing: '0.1em' }}>{h}</span>
                 ))}
@@ -363,6 +365,7 @@ export default function Infrastructure() {
 
         {/* Hardware row */}
         <div
+          className="hw-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
@@ -411,6 +414,12 @@ export default function Infrastructure() {
         @media (max-width: 900px) {
           .infra-grid { grid-template-columns: 1fr !important; }
           .hw-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 640px) {
+          .svc-row-grid { grid-template-columns: 1fr auto !important; }
+          .svc-row-grid > *:nth-child(2),
+          .svc-row-grid > *:nth-child(4),
+          .svc-row-grid > *:nth-child(5) { display: none !important; }
         }
       `}</style>
     </section>
