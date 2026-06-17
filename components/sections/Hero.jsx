@@ -248,7 +248,7 @@ export default function Hero() {
             fontWeight: 400,
             color: 'var(--text-secondary)',
             lineHeight: 1.4,
-            marginBottom: '20px',
+            marginBottom: '52px',
             opacity: mounted ? 1 : 0,
             transform: mounted ? 'translateY(0)' : 'translateY(20px)',
             transition: 'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s',
@@ -257,23 +257,6 @@ export default function Hero() {
           One builder.{' '}
           <AnimatedTagline />
         </div>
-
-        {/* Description */}
-        <p
-          style={{
-            fontSize: 'clamp(15px, 1.8vw, 17px)',
-            color: 'var(--text-muted)',
-            lineHeight: 1.7,
-            maxWidth: '520px',
-            marginBottom: '52px',
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s',
-          }}
-        >
-          Central command for a growing ecosystem of software products, automated systems,
-          and self-hosted infrastructure. Built and operated by one.
-        </p>
 
         {/* CTA buttons */}
         <div
