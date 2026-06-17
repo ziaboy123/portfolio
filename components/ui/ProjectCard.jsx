@@ -54,7 +54,7 @@ export default function ProjectCard({ project, index }) {
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '24px', flexWrap: 'wrap', gap: '12px' }}>
             <div>
               <div className="mono" style={{ fontSize: '11px', color: 'var(--text-muted)', letterSpacing: '0.15em', marginBottom: '8px' }}>
-                PROJECT {String(index + 1).padStart(2, '0')}
+                {project.eyebrow || `PROJECT ${String(index + 1).padStart(2, '0')}`}
               </div>
               <h3 style={{ fontSize: 'clamp(22px, 3vw, 28px)', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.1 }}>
                 {project.name}
@@ -113,7 +113,7 @@ export default function ProjectCard({ project, index }) {
                 VISIT PROJECT
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H5M11 1V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
               </button>
-              <span className="mono" style={{ fontSize: '11px', color: 'var(--text-faint)', letterSpacing: '0.08em' }}>LINK PENDING</span>
+              <span className="mono" style={{ fontSize: '11px', color: 'var(--text-faint)', letterSpacing: '0.08em' }}>{project.urlNote || 'LINK PENDING'}</span>
             </>
           )}
         </div>
