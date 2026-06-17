@@ -9,6 +9,7 @@ const PROJECTS = [
     id: 'deckforge',
     name: 'DeckForge',
     status: 'active',
+    url: 'https://daniyalzia.co.uk/deckforge',
     screenshot: '/screenshots/deckforge.jpg',
     description:
       'Professional-grade deck building and testing platform for competitive Yu-Gi-Oh! players. Search 13,000+ cards, build and manage decks, simulate opening hands, and analyse consistency — all in one place.',
@@ -23,6 +24,7 @@ const PROJECTS = [
     id: 'cipher',
     name: 'Cipher',
     status: 'active',
+    url: 'https://daniyalzia.co.uk/cipher',
     screenshot: '/screenshots/cipher.jpg',
     description:
       'Ephemeral, zero-persistence chat platform. Create a room, share the code, talk — then it\'s gone. No accounts, no message history, no traces. Private by design.',
@@ -37,6 +39,7 @@ const PROJECTS = [
     id: 'watchmatch',
     name: 'WatchMatch',
     status: 'active',
+    url: 'https://daniyalzia.co.uk/watchmatch',
     screenshot: '/screenshots/watchmatch.jpg',
     description:
       'Personalised watch recommendation engine. Answer a short quiz covering wrist size, style, lifestyle, and budget — get matched to the right watch from a curated database of 100+ timepieces across all price points.',
