@@ -23,27 +23,27 @@ const DISCIPLINES = [
   {
     id: 'se',
     label: 'Software Engineering',
-    detail: 'Full-stack development with an emphasis on clean architecture, performance, and products that work well at every layer — from database to UI.',
+    detail: 'Full-stack development — building things end to end, from database schema to the UI, and figuring out everything in between as I go.',
   },
   {
     id: 'ai',
     label: 'Artificial Intelligence',
-    detail: 'Applying AI and machine learning to real problems — building systems that are smarter, more adaptive, and genuinely useful rather than impressive for its own sake.',
+    detail: 'One of the main reasons I got into CS. I want to understand how it actually works — not just call APIs, but know the foundations.',
   },
   {
     id: 'cs',
     label: 'Computer Science',
-    detail: 'Algorithms, data structures, and systems theory as the bedrock — not just knowing how to build things, but understanding why they work and when they break.',
-  },
-  {
-    id: 'auto',
-    label: 'Automation',
-    detail: 'Eliminating manual work at every level. If something can be scripted, scheduled, or triggered automatically, it should be. Human time is better spent elsewhere.',
+    detail: 'Currently studying CS and using everything I learn to build real things. Theory and practice together — it's the only way it sticks.',
   },
   {
     id: 'infra',
     label: 'Infrastructure',
-    detail: 'Self-hosted systems, homelab operations, and the discipline of running production-grade services yourself — because understanding infrastructure makes you a better engineer.',
+    detail: 'Running a Proxmox homelab and self-hosting everything on it. Broke things more than once. Learned more from that than anything else.',
+  },
+  {
+    id: 'auto',
+    label: 'Automation',
+    detail: 'If something can be scripted or automated, I want to know how. Repetitive manual work is the enemy.',
   },
 ];
 
@@ -107,8 +107,8 @@ export default function About() {
           >
             <SectionHeader
               eyebrow="About"
-              title="The Builder"
-              description="Building ambitious technical systems, one layer at a time."
+              title="Still Learning"
+              description="A computer science student building real things to figure out how it all works."
             />
             <div style={{ borderTop: '1px solid var(--border-subtle)' }}>
               {DISCIPLINES.map((item, i) => (
@@ -132,23 +132,24 @@ export default function About() {
                 APPROACH
               </div>
               <blockquote style={{ fontSize: 'clamp(17px, 2.2vw, 21px)', fontWeight: 400, color: 'var(--text-primary)', lineHeight: 1.5, marginBottom: '20px', letterSpacing: '-0.01em' }}>
-                "Ship real products. Understand every layer. Operate what you build."
+                "Build something real. Break it. Fix it. Repeat until it makes sense."
               </blockquote>
               <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>
-                Every project in this ecosystem is designed, built, and run by one person. That means
-                taking full ownership of the stack — from the database to the deployment, from the
-                algorithm to the UI. No outsourcing the hard parts.
+                I&apos;m a computer science student who learns by doing. Every project here started
+                because I wanted to understand something — how auth works, how to run a server,
+                how to build something people can actually use. I&apos;m figuring it out as I go,
+                and building this ecosystem is how I do that.
               </p>
             </div>
 
             {/* Attribute grid */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px' }}>
               {[
-                { label: 'Role', value: 'Solo Builder' },
-                { label: 'Background', value: 'Computer Science' },
-                { label: 'Focus', value: 'Products + Systems' },
+                { label: 'Status', value: 'CS Student' },
+                { label: 'Background', value: 'Self-taught + studying' },
+                { label: 'Focus', value: 'Build and learn' },
                 { label: 'Stack', value: 'Full, end to end' },
-                { label: 'Approach', value: 'Ship and operate' },
+                { label: 'Approach', value: 'Ship and iterate' },
                 { label: 'Domains', value: 'CS · AI · Infra' },
               ].map(({ label, value }) => (
                 <div key={label} style={{ padding: '18px 20px', background: 'var(--bg-elevated)', border: '1px solid var(--border-subtle)' }}>
