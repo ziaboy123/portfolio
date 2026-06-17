@@ -121,6 +121,7 @@ export default function ProjectCard({ project, index }) {
 
       {/* Visual panel */}
       <div
+        className="project-visual"
         style={{
           order: isEven ? 1 : 0,
           position: 'relative',
@@ -175,8 +176,8 @@ export default function ProjectCard({ project, index }) {
       <style>{`
         @media (max-width: 900px) {
           .project-card { display: flex !important; flex-direction: column !important; }
-          .project-card > div:first-of-type { order: 1 !important; min-height: auto !important; }
-          .project-card > div:last-of-type { order: 0 !important; min-height: 220px !important; }
+          .project-card > div:first-of-type { order: 0 !important; min-height: auto !important; }
+          .project-card .project-visual { display: none !important; }
         }
       `}</style>
     </article>
