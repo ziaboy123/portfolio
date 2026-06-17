@@ -1,26 +1,150 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-base: #0a0a0c;
+  --bg-surface: #111115;
+  --bg-elevated: #18181d;
+  --bg-hover: #1e1e25;
+  --border: #252530;
+  --border-subtle: #1a1a22;
+  --red-dim: #5c1010;
+  --red-core: #991b1b;
+  --red-bright: #b91c1c;
+  --red-accent: #dc2626;
+  --text-primary: #ededf0;
+  --text-secondary: #9898a8;
+  --text-muted: #4e4e62;
+  --text-faint: #28282e;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) var(--bg-base);
 }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--red-dim); }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(185, 28, 28, 0.3);
+  color: var(--text-primary);
+}
+
+/* Architectural grid */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.grid-bg-dense {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Monospace */
+.mono {
+  font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Consolas', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Keyframes */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulseRed {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(185,28,28,0.5); }
+  50%       { opacity: 0.7; box-shadow: 0 0 0 5px rgba(185,28,28,0); }
+}
+
+@keyframes scanUp {
+  from { transform: translateY(100%); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  to   { transform: translateY(-100%); opacity: 0; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes drawLine {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes counterOrbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  33%       { transform: translate(8px, -12px); }
+  66%       { transform: translate(-6px, 8px); }
+}
+
+/* Utility animations */
+.anim-fade-up   { animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.anim-fade-in   { animation: fadeIn 0.5s ease forwards; }
+.anim-slide-left { animation: slideInLeft 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.status-pulse   { animation: pulseRed 2.8s ease-in-out infinite; }
+.cursor-blink   { animation: blink 1.1s step-end infinite; }
+
+/* Red accent bar variant */
+.red-bar {
+  display: block;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red-bright), transparent);
+}
+
+/* Section divider */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Number counter */
+.stat-number {
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
 }
