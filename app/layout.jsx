@@ -8,12 +8,12 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'NEXUS — Central Hub',
+  title: 'D.ZIA — Central Hub',
   description: 'The headquarters for an expanding ecosystem of software, infrastructure, and technical systems.',
-  keywords: ['NEXUS', 'software', 'infrastructure', 'computer science', 'AI', 'engineering'],
+  keywords: ['Daniyal Zia', 'software', 'infrastructure', 'computer science', 'engineering'],
   authors: [{ name: 'Daniyal Zia' }],
   openGraph: {
-    title: 'NEXUS — Central Hub',
+    title: 'D.ZIA — Central Hub',
     description: 'One builder. Multiple ambitious systems.',
     type: 'website',
   },
