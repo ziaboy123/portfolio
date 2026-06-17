@@ -72,7 +72,7 @@ const EVENTS = [
     seq: '07',
     type: 'launch',
     title: 'Home Server — Self-Hosted',
-    description: 'Moved all projects off cloud hosting onto a self-managed home server. Everything self-hosted and self-maintained.',
+    description: 'Set up and runs a home server hosting all projects — handling networking, routing, and uptime personally. No cloud providers, no managed hosting.',
     tag: 'Infrastructure',
     project: 'Infra',
   },
