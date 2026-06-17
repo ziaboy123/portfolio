@@ -71,8 +71,8 @@ const EVENTS = [
   {
     seq: '07',
     type: 'launch',
-    title: 'Homelab — Self-Hosted',
-    description: 'All four projects deployed to a self-hosted Proxmox cluster. Cloudflare Tunnel routes traffic with no port forwarding. Everything runs on one LXC container via Nginx + PM2.',
+    title: 'Home Server — Self-Hosted',
+    description: 'Moved all projects off cloud hosting onto a self-managed home server. Everything self-hosted and self-maintained.',
     tag: 'Infrastructure',
     project: 'Infra',
   },
