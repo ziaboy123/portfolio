@@ -295,35 +295,6 @@ export default function Hero() {
               <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
-          <a
-            href="#infrastructure"
-            onClick={(e) => { e.preventDefault(); document.getElementById('infrastructure')?.scrollIntoView({ behavior: 'smooth' }); }}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '12px 28px',
-              background: 'transparent',
-              color: 'var(--text-secondary)',
-              textDecoration: 'none',
-              fontSize: '13px',
-              fontWeight: 500,
-              letterSpacing: '0.06em',
-              border: '1px solid var(--border)',
-              transition: 'border-color 0.2s ease, color 0.2s ease',
-              cursor: 'pointer',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'var(--text-muted)';
-              e.currentTarget.style.color = 'var(--text-primary)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'var(--border)';
-              e.currentTarget.style.color = 'var(--text-secondary)';
-            }}
-          >
-            INFRASTRUCTURE
-          </a>
         </div>
 
         {/* Metrics strip */}
