@@ -260,7 +260,7 @@ export default function Contact() {
               color: 'var(--text-muted)',
             }}
           >
-            NEXUS — ONE BUILDER. MULTIPLE SYSTEMS.
+            D.ZIA — ONE BUILDER. MULTIPLE SYSTEMS.
           </div>
         </div>
       </div>
