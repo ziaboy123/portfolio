@@ -23,7 +23,7 @@ const EVENTS = [
   {
     seq: '01',
     type: 'milestone',
-    title: 'Portfolio Conceived',
+    title: 'Nexus (Portfolio) Conceived',
     description: 'Decided to build a central hub above all individual projects — a permanent home for the full ecosystem as it grows.',
     tag: 'Foundation',
     project: 'NEXUS',
@@ -63,7 +63,7 @@ const EVENTS = [
   {
     seq: '06',
     type: 'milestone',
-    title: 'Portfolio v1.0 — Live',
+    title: 'Nexus (Portfolio) v1.0 — Live',
     description: 'Portfolio launched at daniyalzia.co.uk. All three projects showcased. Infrastructure dashboard, timeline, and contact sections live. The ecosystem is now publicly visible.',
     tag: 'Portfolio',
     project: 'NEXUS',

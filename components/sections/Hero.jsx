@@ -238,7 +238,7 @@ export default function Hero() {
             transition: 'opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s',
           }}
         >
-          DANIYAL ZIA
+          NEXUS
         </h1>
 
         {/* Tagline */}
