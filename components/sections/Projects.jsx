@@ -6,21 +6,6 @@ import ProjectCard from '@/components/ui/ProjectCard';
 
 const PROJECTS = [
   {
-    id: 'deckforge',
-    name: 'DeckForge',
-    status: 'active',
-    url: 'https://daniyalzia.co.uk/deckforge',
-    screenshot: '/screenshots/deckforge.jpg',
-    description:
-      'Professional-grade deck building and testing platform for competitive Yu-Gi-Oh! players. Search 13,000+ cards, build and manage decks, simulate opening hands, and analyse consistency — all in one place.',
-    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'],
-    metrics: [
-      { label: 'Cards', value: '13,000+' },
-      { label: 'Hand Speed', value: '<50ms' },
-      { label: 'Cost', value: 'Free' },
-    ],
-  },
-  {
     id: 'cipher',
     name: 'Cipher',
     status: 'active',
@@ -48,6 +33,21 @@ const PROJECTS = [
       { label: 'Watches', value: '100+' },
       { label: 'Time to Match', value: '<3 min' },
       { label: 'Sign-up', value: 'None' },
+    ],
+  },
+  {
+    id: 'deckforge',
+    name: 'DeckForge',
+    status: 'active',
+    url: 'https://daniyalzia.co.uk/deckforge',
+    screenshot: '/screenshots/deckforge.jpg',
+    description:
+      'Professional-grade deck building and testing platform for competitive Yu-Gi-Oh! players. Search 13,000+ cards, build and manage decks, simulate opening hands, and analyse consistency — all in one place.',
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'],
+    metrics: [
+      { label: 'Cards', value: '13,000+' },
+      { label: 'Hand Speed', value: '<50ms' },
+      { label: 'Cost', value: 'Free' },
     ],
   },
 ];
