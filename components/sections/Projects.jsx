@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import SectionHeader from '@/components/ui/SectionHeader';
 import ProjectCard from '@/components/ui/ProjectCard';
 
-const PROJECTS = [
+const PUBLIC_PROJECTS = [
   {
     id: 'cipher',
     name: 'Cipher',
@@ -48,6 +48,24 @@ const PROJECTS = [
       { label: 'Cards', value: '13,000+' },
       { label: 'Hand Speed', value: '<50ms' },
       { label: 'Cost', value: 'Free' },
+    ],
+  },
+];
+
+const PERSONAL_PROJECTS = [
+  {
+    id: 'zarc',
+    name: 'Z-ARC',
+    status: 'personal',
+    url: null,
+    urlNote: 'INTERNAL USE',
+    screenshot: null,
+    description: 'Private AI orchestration platform running 24/7 on the home server. Multi-provider routing, tool integrations, Discord interface, autonomous project-building, and persistent memory. Built to operate — not a public product.',
+    stack: ['React 19', 'Vite', 'FastAPI', 'Python'],
+    metrics: [
+      { label: 'Providers', value: '3' },
+      { label: 'Tools', value: '7+' },
+      { label: 'Access', value: 'LAN Only' },
     ],
   },
 ];
@@ -111,8 +129,24 @@ export default function Projects() {
           />
         </div>
 
+        {/* Public projects */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+          <span className="mono" style={{ fontSize: '10px', letterSpacing: '0.18em', color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>PUBLIC — ACCESSIBLE</span>
+          <div style={{ flex: 1, height: '1px', background: 'var(--border-subtle)' }} />
+        </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-          {PROJECTS.map((project, i) => (
+          {PUBLIC_PROJECTS.map((project, i) => (
+            <AnimatedCard key={project.id} project={project} index={i} />
+          ))}
+        </div>
+
+        {/* Personal projects */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px', marginTop: '56px' }}>
+          <span className="mono" style={{ fontSize: '10px', letterSpacing: '0.18em', color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>PERSONAL — INTERNAL USE</span>
+          <div style={{ flex: 1, height: '1px', background: 'var(--border-subtle)' }} />
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+          {PERSONAL_PROJECTS.map((project, i) => (
             <AnimatedCard key={project.id} project={project} index={i} />
           ))}
         </div>
