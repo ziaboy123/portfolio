@@ -7,6 +7,7 @@ import StatusBadge from './StatusBadge';
 export default function ProjectCard({ project, index }) {
   const [hovered, setHovered] = useState(false);
   const isEven = index % 2 === 0;
+  const noVisual = project.noVisual;
 
   return (
     <article
@@ -14,7 +15,7 @@ export default function ProjectCard({ project, index }) {
       onMouseLeave={() => setHovered(false)}
       style={{
         display: 'grid',
-        gridTemplateColumns: isEven ? '1fr 440px' : '440px 1fr',
+        gridTemplateColumns: noVisual ? '1fr' : (isEven ? '1fr 440px' : '440px 1fr'),
         gap: '0',
         border: '1px solid',
         borderColor: hovered ? 'var(--border)' : 'var(--border-subtle)',
@@ -120,58 +121,60 @@ export default function ProjectCard({ project, index }) {
       </div>
 
       {/* Visual panel */}
-      <div
-        className="project-visual"
-        style={{
-          order: isEven ? 1 : 0,
-          position: 'relative',
-          overflow: 'hidden',
-          borderLeft: isEven ? '1px solid var(--border-subtle)' : 'none',
-          borderRight: !isEven ? '1px solid var(--border-subtle)' : 'none',
-          minHeight: '340px',
-          background: 'var(--bg-elevated)',
-        }}
-      >
-        {project.screenshot ? (
-          <>
-            <div style={{ position: 'absolute', inset: 0 }}>
-              <Image
-                src={project.screenshot}
-                alt={`${project.name} screenshot`}
-                fill
-                quality={95}
-                style={{ objectFit: 'cover', objectPosition: 'top center', transition: 'transform 0.5s ease', transform: hovered ? 'scale(1.03)' : 'scale(1)' }}
-                sizes="(max-width: 900px) 100vw, 440px"
-                priority={index === 0}
-              />
-            </div>
-            {/* Overlay gradient */}
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 50%, rgba(10,10,12,0.7) 100%)', pointerEvents: 'none' }} />
-            {/* Bottom label */}
-            <div style={{ position: 'absolute', bottom: '16px', left: '16px', right: '16px' }}>
-              <div className="mono" style={{ fontSize: '10px', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', padding: '6px 10px', background: 'rgba(10,10,12,0.6)', border: '1px solid rgba(255,255,255,0.06)', display: 'inline-block' }}>
-                ↳ {project.name.toUpperCase()} — PREVIEW
+      {!noVisual && (
+        <div
+          className="project-visual"
+          style={{
+            order: isEven ? 1 : 0,
+            position: 'relative',
+            overflow: 'hidden',
+            borderLeft: isEven ? '1px solid var(--border-subtle)' : 'none',
+            borderRight: !isEven ? '1px solid var(--border-subtle)' : 'none',
+            minHeight: '340px',
+            background: 'var(--bg-elevated)',
+          }}
+        >
+          {project.screenshot ? (
+            <>
+              <div style={{ position: 'absolute', inset: 0 }}>
+                <Image
+                  src={project.screenshot}
+                  alt={`${project.name} screenshot`}
+                  fill
+                  quality={95}
+                  style={{ objectFit: 'cover', objectPosition: 'top center', transition: 'transform 0.5s ease', transform: hovered ? 'scale(1.03)' : 'scale(1)' }}
+                  sizes="(max-width: 900px) 100vw, 440px"
+                  priority={index === 0}
+                />
               </div>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="grid-bg-dense" style={{ position: 'absolute', inset: 0, opacity: 0.5 }} />
-            <div style={{ position: 'absolute', inset: '24px', border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '12px', background: 'rgba(10,10,12,0.5)' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '28px', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', padding: '0 10px', gap: '6px' }}>
-                {['var(--red-dim)', 'var(--text-faint)', 'var(--text-faint)'].map((c, i) => (
-                  <span key={i} style={{ width: '7px', height: '7px', borderRadius: '50%', background: c }} />
-                ))}
+              {/* Overlay gradient */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 50%, rgba(10,10,12,0.7) 100%)', pointerEvents: 'none' }} />
+              {/* Bottom label */}
+              <div style={{ position: 'absolute', bottom: '16px', left: '16px', right: '16px' }}>
+                <div className="mono" style={{ fontSize: '10px', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', padding: '6px 10px', background: 'rgba(10,10,12,0.6)', border: '1px solid rgba(255,255,255,0.06)', display: 'inline-block' }}>
+                  ↳ {project.name.toUpperCase()} — PREVIEW
+                </div>
               </div>
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" style={{ opacity: 0.15 }}>
-                <rect x="1" y="1" width="38" height="38" stroke="white" strokeWidth="1" />
-                <path d="M1 15h38M1 25h38M15 1v38M25 1v38" stroke="white" strokeWidth="0.5" />
-              </svg>
-              <span className="mono" style={{ fontSize: '11px', color: 'var(--text-faint)', letterSpacing: '0.12em' }}>SCREENSHOT PLACEHOLDER</span>
-            </div>
-          </>
-        )}
-      </div>
+            </>
+          ) : (
+            <>
+              <div className="grid-bg-dense" style={{ position: 'absolute', inset: 0, opacity: 0.5 }} />
+              <div style={{ position: 'absolute', inset: '24px', border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '12px', background: 'rgba(10,10,12,0.5)' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '28px', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', padding: '0 10px', gap: '6px' }}>
+                  {['var(--red-dim)', 'var(--text-faint)', 'var(--text-faint)'].map((c, i) => (
+                    <span key={i} style={{ width: '7px', height: '7px', borderRadius: '50%', background: c }} />
+                  ))}
+                </div>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" style={{ opacity: 0.15 }}>
+                  <rect x="1" y="1" width="38" height="38" stroke="white" strokeWidth="1" />
+                  <path d="M1 15h38M1 25h38M15 1v38M25 1v38" stroke="white" strokeWidth="0.5" />
+                </svg>
+                <span className="mono" style={{ fontSize: '11px', color: 'var(--text-faint)', letterSpacing: '0.12em' }}>SCREENSHOT PLACEHOLDER</span>
+              </div>
+            </>
+          )}
+        </div>
+      )}
 
       <style>{`
         @media (max-width: 900px) {

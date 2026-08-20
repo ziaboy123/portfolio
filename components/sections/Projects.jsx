@@ -54,13 +54,14 @@ const PUBLIC_PROJECTS = [
 
 const PERSONAL_PROJECTS = [
   {
-    id: 'zarc',
-    name: 'Z-ARC',
+    id: 'blackwood',
+    name: 'Blackwood',
     status: 'personal',
     url: null,
     urlNote: 'INTERNAL USE',
     screenshot: null,
-    description: 'Private AI orchestration platform running 24/7 on the home server. Multi-provider routing, tool integrations, Discord interface, autonomous project-building, and persistent memory. Built to operate — not a public product.',
+    noVisual: true,
+    description: 'Private AI running 24/7 on the home server, built on the Z-ARC platform. Multi-provider routing, tool integrations, Discord interface, autonomous project-building, and persistent memory. Built to operate — not a public product.',
     stack: ['React 19', 'Vite', 'FastAPI', 'Python'],
     metrics: [
       { label: 'Providers', value: '3' },
