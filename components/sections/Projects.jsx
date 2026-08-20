@@ -61,7 +61,8 @@ const PERSONAL_PROJECTS = [
     urlNote: 'INTERNAL USE',
     screenshot: null,
     noVisual: true,
-    description: 'Private AI running 24/7 on the home server, built on the Z-ARC platform. Multi-provider routing, tool integrations, Discord interface, autonomous project-building, and persistent memory. Built to operate — not a public product.',
+    hideLink: true,
+    description: 'Private AI assistant that runs around the clock on the home server, built on the Z-ARC platform. It has its own voice and personality, talks over Discord, and sends a daily morning briefing covering weather, calendar, and email. It remembers past conversations over the long term, automatically picks the right AI model for each task, can generate images and research topics into a written document, and can even hand off small coding projects to build on its own. Built to operate — not a public product.',
     stack: ['React 19', 'Vite', 'FastAPI', 'Python'],
     metrics: [
       { label: 'Providers', value: '3' },

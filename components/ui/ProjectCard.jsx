@@ -65,7 +65,7 @@ export default function ProjectCard({ project, index }) {
           </div>
 
           {/* Description */}
-          <p style={{ fontSize: '15px', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '28px', maxWidth: '400px' }}>
+          <p style={{ fontSize: '15px', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '28px', maxWidth: noVisual ? 'none' : '400px' }}>
             {project.description}
           </p>
 
@@ -95,29 +95,31 @@ export default function ProjectCard({ project, index }) {
         </div>
 
         {/* Footer */}
-        <div style={{ marginTop: '28px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-          {project.url ? (
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '7px', padding: '8px 18px', background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-secondary)', fontSize: '12px', letterSpacing: '0.06em', cursor: 'pointer', fontFamily: 'inherit', textDecoration: 'none', transition: 'border-color 0.2s, color 0.2s' }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--red-bright)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-secondary)'; }}
-            >
-              VISIT PROJECT
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H5M11 1V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
-            </a>
-          ) : (
-            <>
-              <button disabled style={{ display: 'inline-flex', alignItems: 'center', gap: '7px', padding: '8px 18px', background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-muted)', fontSize: '12px', letterSpacing: '0.06em', cursor: 'not-allowed', opacity: 0.5, fontFamily: 'inherit' }}>
+        {!project.hideLink && (
+          <div style={{ marginTop: '28px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+            {project.url ? (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '7px', padding: '8px 18px', background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-secondary)', fontSize: '12px', letterSpacing: '0.06em', cursor: 'pointer', fontFamily: 'inherit', textDecoration: 'none', transition: 'border-color 0.2s, color 0.2s' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--red-bright)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-secondary)'; }}
+              >
                 VISIT PROJECT
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H5M11 1V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
-              </button>
-              <span className="mono" style={{ fontSize: '11px', color: 'var(--text-faint)', letterSpacing: '0.08em' }}>{project.urlNote || 'LINK PENDING'}</span>
-            </>
-          )}
-        </div>
+              </a>
+            ) : (
+              <>
+                <button disabled style={{ display: 'inline-flex', alignItems: 'center', gap: '7px', padding: '8px 18px', background: 'transparent', border: '1px solid var(--border)', color: 'var(--text-muted)', fontSize: '12px', letterSpacing: '0.06em', cursor: 'not-allowed', opacity: 0.5, fontFamily: 'inherit' }}>
+                  VISIT PROJECT
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H5M11 1V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
+                </button>
+                <span className="mono" style={{ fontSize: '11px', color: 'var(--text-faint)', letterSpacing: '0.08em' }}>{project.urlNote || 'LINK PENDING'}</span>
+              </>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Visual panel */}
