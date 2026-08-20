@@ -84,6 +84,14 @@ const EVENTS = [
     tag: 'Ecosystem',
     project: 'All',
   },
+  {
+    seq: '09',
+    type: 'launch',
+    title: 'Z-ARC — Private AI Platform',
+    description: 'Built and deployed a private AI orchestration platform on the home server. Multi-provider routing, autonomous tool integrations, Discord interface, and persistent memory. Personal infrastructure — not a public product.',
+    tag: 'Z-ARC',
+    project: 'ZARC',
+  },
 ];
 
 const TYPE_COLORS = {
@@ -101,6 +109,7 @@ const PROJECT_COLORS = {
   Portfolio: 'var(--red-bright)',
   Infra:     '#3b82f6',
   All:       '#22c55e',
+  ZARC:      '#8b5cf6',
 };
 
 function TimelineItem({ event, index, isLast }) {

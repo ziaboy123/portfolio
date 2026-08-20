@@ -4,6 +4,7 @@ const STATUS_CONFIG = {
   development:  { label: 'In Dev',       color: '#3b82f6', bg: 'rgba(59,130,246,0.1)', pulse: true },
   planned:      { label: 'Planned',      color: '#6b7280', bg: 'rgba(107,114,128,0.1)',pulse: false },
   archived:     { label: 'Archived',     color: '#4b5563', bg: 'rgba(75,85,99,0.1)',   pulse: false },
+  personal:     { label: 'Personal',     color: '#b91c1c', bg: 'rgba(185,28,28,0.08)', pulse: false },
 };
 
 export default function StatusBadge({ status = 'planned' }) {
