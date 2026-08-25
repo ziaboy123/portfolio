@@ -92,6 +92,14 @@ const EVENTS = [
     tag: 'Blackwood',
     project: 'Blackwood',
   },
+  {
+    seq: '10',
+    type: 'launch',
+    title: 'Gambit — In Development',
+    description: 'Building a full 3D medieval chess experience — AI opponents at three difficulty tiers, real-time private multiplayer with room codes, cinematic capture animations, and a ranked match system with replays.',
+    tag: 'Gambit',
+    project: 'Gambit',
+  },
 ];
 
 const TYPE_COLORS = {
@@ -110,6 +118,7 @@ const PROJECT_COLORS = {
   Infra:     '#3b82f6',
   All:       '#22c55e',
   Blackwood: '#8b5cf6',
+  Gambit:    '#c4953a',
 };
 
 function TimelineItem({ event, index, isLast }) {
