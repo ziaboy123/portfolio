@@ -6,6 +6,21 @@ import ProjectCard from '@/components/ui/ProjectCard';
 
 const PUBLIC_PROJECTS = [
   {
+    id: 'gambit',
+    name: 'Gambit',
+    status: 'active',
+    url: 'https://daniyalzia.co.uk/gambit',
+    screenshot: null,
+    description:
+      'Full 3D medieval chess with animated piece combat. A cinematic camera cuts to every capture, three AI tiers cover all skill levels, and private rooms let you challenge a friend with a six-character code. Ranked games are tracked and replayable — no account needed to play.',
+    stack: ['Three.js', 'Node.js', 'Socket.io', 'Stockfish'],
+    metrics: [
+      { label: 'AI Tiers', value: '3' },
+      { label: 'Board', value: '3D' },
+      { label: 'Cost', value: 'Free' },
+    ],
+  },
+  {
     id: 'cipher',
     name: 'Cipher',
     status: 'active',
