@@ -69,20 +69,20 @@ const PUBLIC_PROJECTS = [
 
 const PERSONAL_PROJECTS = [
   {
-    id: 'blackwood',
-    name: 'Blackwood',
+    id: 'the-seven',
+    name: 'The Seven',
     status: 'personal',
     url: null,
     urlNote: 'INTERNAL USE',
     screenshot: null,
     noVisual: true,
     hideLink: true,
-    description: 'Private AI assistant that runs around the clock on the home server, built on the Z-ARC platform. It has its own voice and personality, talks over Discord, and sends a daily morning briefing covering weather, calendar, and email. It remembers past conversations over the long term, automatically picks the right AI model for each task, can generate images and research topics into a written document, and can even hand off small coding projects to build on its own. Built to operate — not a public product.',
-    stack: ['React 19', 'Vite', 'FastAPI', 'Python'],
+    description: 'Seven distinct AI companions living on Discord, each with its own name, voice, and job — no single assistant wearing every hat. One handles email and the calendar, one plans trips, one helps prototype rough ideas, one tracks job applications against a strict checklist before anything gets submitted, one is just there for everyday chat, one keeps track of meals against a goal, and one has full, ongoing memory of every project I build and can pick up coding work directly. Runs around the clock on the home server, reachable anytime from Discord. Built to operate — not a public product.',
+    stack: ['Python', 'FastAPI', 'Discord.py', 'Groq'],
     metrics: [
+      { label: 'Agents', value: '7' },
       { label: 'Providers', value: '3' },
-      { label: 'Tools', value: '7+' },
-      { label: 'Access', value: 'LAN Only' },
+      { label: 'Access', value: 'Discord DM' },
     ],
   },
 ];

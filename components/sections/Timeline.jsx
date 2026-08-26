@@ -87,10 +87,10 @@ const EVENTS = [
   {
     seq: '09',
     type: 'launch',
-    title: 'Blackwood — Private AI',
-    description: 'Built and deployed Blackwood, a private AI running on the Z-ARC platform on the home server. Multi-provider routing, autonomous tool integrations, Discord interface, and persistent memory. Personal infrastructure — not a public product.',
-    tag: 'Blackwood',
-    project: 'Blackwood',
+    title: 'The Seven — Seven-Agent AI Platform',
+    description: 'Grew a single private AI into seven distinct Discord companions, each with its own name, voice, and job — email and calendar, trip planning, prototyping, job tracking, everyday chat, meal tracking, and one with full ongoing memory of every project built. Personal infrastructure — not a public product.',
+    tag: 'The Seven',
+    project: 'TheSeven',
   },
   {
     seq: '10',
@@ -117,7 +117,7 @@ const PROJECT_COLORS = {
   Portfolio: 'var(--red-bright)',
   Infra:     '#3b82f6',
   All:       '#22c55e',
-  Blackwood: '#8b5cf6',
+  TheSeven: '#8b5cf6',
   Gambit:    '#c4953a',
 };
 
