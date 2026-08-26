@@ -95,8 +95,8 @@ const EVENTS = [
   {
     seq: '10',
     type: 'launch',
-    title: 'Gambit — In Development',
-    description: 'Building a full 3D medieval chess experience — AI opponents at three difficulty tiers, real-time private multiplayer with room codes, cinematic capture animations, and a ranked match system with replays.',
+    title: 'Gambit — Built & Shipped',
+    description: 'Shipped a full 3D medieval chess experience — AI opponents at three difficulty tiers, real-time private multiplayer with room codes, cinematic capture animations, and a ranked match system with replays.',
     tag: 'Gambit',
     project: 'Gambit',
   },
