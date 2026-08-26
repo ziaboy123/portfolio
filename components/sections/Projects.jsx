@@ -10,7 +10,7 @@ const PUBLIC_PROJECTS = [
     name: 'Gambit',
     status: 'active',
     url: 'https://daniyalzia.co.uk/gambit',
-    screenshot: null,
+    screenshot: '/screenshots/gambit.jpg',
     description:
       'Full 3D medieval chess with animated piece combat. A cinematic camera cuts to every capture, three AI tiers cover all skill levels, and private rooms let you challenge a friend with a six-character code. Ranked games are tracked and replayable — no account needed to play.',
     stack: ['Three.js', 'Node.js', 'Socket.io', 'Stockfish'],
