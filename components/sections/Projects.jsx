@@ -69,8 +69,8 @@ const PUBLIC_PROJECTS = [
 
 const PERSONAL_PROJECTS = [
   {
-    id: 'the-ultimate-realm',
-    name: 'The Ultimate Realm',
+    id: 'minecraft-server',
+    name: 'Minecraft Server',
     status: 'personal',
     url: null,
     urlNote: 'WHITELIST ONLY',
