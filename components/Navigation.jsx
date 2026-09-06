@@ -1,15 +1,19 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { label: 'Projects', href: '#projects' },
-  { label: 'About', href: '#about' },
-  { label: 'Timeline', href: '#timeline' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Projects', id: 'projects', type: 'anchor' },
+  { label: 'About', id: 'about', type: 'anchor' },
+  { label: 'Timeline', id: 'timeline', type: 'page', href: '/timeline' },
+  { label: 'Contact', id: 'contact', type: 'anchor' },
 ];
 
 export default function Navigation() {
+  const pathname = usePathname();
+  const isHome = pathname === '/';
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState('');
@@ -21,6 +25,7 @@ export default function Navigation() {
   }, []);
 
   useEffect(() => {
+    if (!isHome) return;
     const sections = ['hero', 'projects', 'about', 'timeline', 'contact'];
     const observer = new IntersectionObserver(
       (entries) => {
@@ -35,11 +40,11 @@ export default function Navigation() {
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
-  }, []);
+  }, [isHome]);
 
-  const handleNav = (e, href) => {
+  const handleNav = (e, id) => {
+    if (!isHome) return; // let it navigate to /#id normally
     e.preventDefault();
-    const id = href.replace('#', '');
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false);
   };
@@ -71,9 +76,9 @@ export default function Navigation() {
         }}
       >
         {/* Wordmark */}
-        <a
-          href="#"
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+        <Link
+          href="/"
+          onClick={(e) => { if (isHome) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); } }}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -112,7 +117,7 @@ export default function Navigation() {
           >
             D.ZIA
           </span>
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <ul
@@ -124,14 +129,14 @@ export default function Navigation() {
           }}
           className="hidden-mobile"
         >
-          {navLinks.map(({ label, href }) => {
-            const id = href.replace('#', '');
-            const isActive = active === id;
+          {navLinks.map((link) => {
+            const linkHref = link.type === 'page' ? link.href : (isHome ? `#${link.id}` : `/#${link.id}`);
+            const isActive = link.type === 'page' ? pathname === link.href : (isHome && active === link.id);
             return (
-              <li key={href}>
-                <a
-                  href={href}
-                  onClick={(e) => handleNav(e, href)}
+              <li key={link.id}>
+                <Link
+                  href={linkHref}
+                  onClick={link.type === 'anchor' ? (e) => handleNav(e, link.id) : () => setMenuOpen(false)}
                   style={{
                     display: 'block',
                     padding: '6px 14px',
@@ -145,7 +150,7 @@ export default function Navigation() {
                   onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = isActive ? 'var(--text-primary)' : 'var(--text-muted)'; }}
                 >
-                  {label}
+                  {link.label}
                   {isActive && (
                     <span
                       style={{
@@ -158,7 +163,7 @@ export default function Navigation() {
                       }}
                     />
                   )}
-                </a>
+                </Link>
               </li>
             );
           })}
@@ -237,24 +242,27 @@ export default function Navigation() {
             padding: '8px 0 16px',
           }}
         >
-          {navLinks.map(({ label, href }) => (
-            <a
-              key={href}
-              href={href}
-              onClick={(e) => handleNav(e, href)}
-              style={{
-                display: 'block',
-                padding: '12px 24px',
-                fontSize: '14px',
-                color: 'var(--text-secondary)',
-                textDecoration: 'none',
-                letterSpacing: '0.04em',
-                borderBottom: '1px solid var(--border-subtle)',
-              }}
-            >
-              {label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const linkHref = link.type === 'page' ? link.href : (isHome ? `#${link.id}` : `/#${link.id}`);
+            return (
+              <Link
+                key={link.id}
+                href={linkHref}
+                onClick={link.type === 'anchor' ? (e) => handleNav(e, link.id) : () => setMenuOpen(false)}
+                style={{
+                  display: 'block',
+                  padding: '12px 24px',
+                  fontSize: '14px',
+                  color: 'var(--text-secondary)',
+                  textDecoration: 'none',
+                  letterSpacing: '0.04em',
+                  borderBottom: '1px solid var(--border-subtle)',
+                }}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
       )}
 

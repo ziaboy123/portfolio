@@ -1,6 +1,10 @@
 'use client';
 
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 export default function Footer() {
+  const isHome = usePathname() === '/';
   const year = new Date().getFullYear();
 
   return (
@@ -53,27 +57,31 @@ export default function Footer() {
         </div>
 
         <div style={{ display: 'flex', gap: '28px', flexWrap: 'wrap' }}>
-          {['Projects', 'Infrastructure', 'About', 'Contact'].map((label) => (
-            <a
-              key={label}
-              href={`#${label.toLowerCase()}`}
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById(label.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              style={{
-                fontSize: '12px',
-                color: 'var(--text-faint)',
-                textDecoration: 'none',
-                letterSpacing: '0.04em',
-                transition: 'color 0.15s ease',
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-faint)'; }}
-            >
-              {label}
-            </a>
-          ))}
+          {['Projects', 'Infrastructure', 'About', 'Contact'].map((label) => {
+            const id = label.toLowerCase();
+            return (
+              <Link
+                key={label}
+                href={isHome ? `#${id}` : `/#${id}`}
+                onClick={(e) => {
+                  if (!isHome) return;
+                  e.preventDefault();
+                  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                style={{
+                  fontSize: '12px',
+                  color: 'var(--text-faint)',
+                  textDecoration: 'none',
+                  letterSpacing: '0.04em',
+                  transition: 'color 0.15s ease',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-faint)'; }}
+              >
+                {label}
+              </Link>
+            );
+          })}
         </div>
 
         <div
