@@ -103,10 +103,10 @@ const EVENTS = [
   {
     seq: '11',
     type: 'launch',
-    title: 'The Ultimate Realm — Private Minecraft Server',
+    title: 'Minecraft Server — Launched',
     description: 'Turned a personal singleplayer world into a real 24/7 Minecraft server for a small group of friends — proper whitelist, real accounts, automatic backups. Self-hosted and self-maintained, not a rented box.',
-    tag: 'Ultimate Realm',
-    project: 'UltimateRealm',
+    tag: 'Minecraft Server',
+    project: 'MinecraftServer',
   },
 ];
 
@@ -127,7 +127,7 @@ const PROJECT_COLORS = {
   All:       '#22c55e',
   TheSeven: '#8b5cf6',
   Gambit:    '#c4953a',
-  UltimateRealm: '#65a30d',
+  MinecraftServer: '#65a30d',
 };
 
 function TimelineItem({ event, index, isLast }) {
