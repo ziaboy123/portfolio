@@ -24,6 +24,18 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Arriving here via a cross-page link like /#projects: the browser tries to
+  // jump to the hash before the client-rendered layout has settled (fonts,
+  // reveal animations, etc.), so it lands short. Re-scroll once mounted.
+  useEffect(() => {
+    if (!isHome || !window.location.hash) return;
+    const id = window.location.hash.slice(1);
+    const timer = setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [isHome]);
+
   useEffect(() => {
     if (!isHome) return;
     const sections = ['hero', 'projects', 'about', 'timeline', 'contact'];
