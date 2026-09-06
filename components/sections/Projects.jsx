@@ -69,6 +69,23 @@ const PUBLIC_PROJECTS = [
 
 const PERSONAL_PROJECTS = [
   {
+    id: 'the-ultimate-realm',
+    name: 'The Ultimate Realm',
+    status: 'personal',
+    url: null,
+    urlNote: 'WHITELIST ONLY',
+    screenshot: null,
+    noVisual: true,
+    hideLink: true,
+    description: 'A private Minecraft server built from my own singleplayer world, running around the clock for me and a handful of friends. Real accounts, a strict whitelist, automatic backups, and a proper admin setup — not a rented server, a real one I run and maintain myself on the home server.',
+    stack: ['Minecraft', 'Paper', 'Java 21', 'systemd'],
+    metrics: [
+      { label: 'Friends', value: '5' },
+      { label: 'Uptime', value: '24/7' },
+      { label: 'Access', value: 'Whitelist' },
+    ],
+  },
+  {
     id: 'the-seven',
     name: 'The Seven',
     status: 'personal',
