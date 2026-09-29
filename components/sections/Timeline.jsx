@@ -87,10 +87,10 @@ const EVENTS = [
   {
     seq: '09',
     type: 'launch',
-    title: 'The Seven — Seven-Agent AI Platform',
-    description: 'Grew a single private AI into seven distinct Discord companions, each with its own name, voice, and job — email and calendar, trip planning, prototyping, job tracking, everyday chat, meal tracking, and one with full ongoing memory of every project built. Personal infrastructure — not a public product.',
-    tag: 'The Seven',
-    project: 'TheSeven',
+    title: 'The Five — Five-Agent AI Platform',
+    description: 'Grew a single private AI into five distinct Discord companions, each scoped to one part of everyday life — calendar and email, trip planning, casual chat, food tracking, and more. Personal infrastructure — not a public product.',
+    tag: 'The Five',
+    project: 'TheFive',
   },
   {
     seq: '10',
@@ -107,6 +107,38 @@ const EVENTS = [
     description: 'Turned a personal singleplayer world into a real 24/7 Minecraft server for a small group of friends — proper whitelist, real accounts, automatic backups. Self-hosted and self-maintained, not a rented box.',
     tag: 'Minecraft Server',
     project: 'MinecraftServer',
+  },
+  {
+    seq: '12',
+    type: 'launch',
+    title: 'Arc — Homelab Guardian, Live',
+    description: 'Built an always-on AI that watches over the home server and speaks up unprompted in Discord — infra health, security monitoring, live Minecraft admin, and presence detection, all from one voice that never needs to be asked.',
+    tag: 'Arc',
+    project: 'Arc',
+  },
+  {
+    seq: '13',
+    type: 'launch',
+    title: 'Beacon — Minecraft Admin Dashboard',
+    description: 'Shipped a private admin dashboard for the Minecraft server — live console, whitelist management, and a full inventory viewer rendering real armor, enchantments, and trims.',
+    tag: 'Beacon',
+    project: 'Beacon',
+  },
+  {
+    seq: '14',
+    type: 'launch',
+    title: "Zia's Panel — Physical Wall Panel, Live",
+    description: 'Wrote and deployed custom firmware for a 7-inch touchscreen mounted on the office wall — live status tiles for the home server, PC control, TV control, and more. Real hardware.',
+    tag: "Zia's Panel",
+    project: 'ZiasPanel',
+  },
+  {
+    seq: '15',
+    type: 'launch',
+    title: 'The Grid — iOS App, Feature-Complete',
+    description: 'Built a native iOS app for freeform notes and a daily dashboard — boards, a Today view with calendar and mail, Face ID lock, and a home screen widget. Running on my own phone.',
+    tag: 'The Grid',
+    project: 'TheGrid',
   },
 ];
 
@@ -125,9 +157,13 @@ const PROJECT_COLORS = {
   Portfolio: 'var(--red-bright)',
   Infra:     '#3b82f6',
   All:       '#22c55e',
-  TheSeven: '#8b5cf6',
+  TheFive: '#8b5cf6',
   Gambit:    '#c4953a',
   MinecraftServer: '#65a30d',
+  Arc:       '#e11d48',
+  Beacon:    '#0891b2',
+  ZiasPanel: '#f59e0b',
+  TheGrid:   '#d97757',
 };
 
 function TimelineItem({ event, index, isLast }) {
