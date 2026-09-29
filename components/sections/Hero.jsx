@@ -227,7 +227,7 @@ export default function Hero() {
         {/* Main heading */}
         <h1
           style={{
-            fontSize: 'clamp(64px, 12vw, 128px)',
+            fontSize: 'clamp(48px, 9vw, 96px)',
             fontWeight: 800,
             letterSpacing: '-0.04em',
             lineHeight: 0.9,
@@ -238,7 +238,8 @@ export default function Hero() {
             transition: 'opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s',
           }}
         >
-          NEXUS
+          <span style={{ fontSize: '1.3em' }}>D</span>ANIYAL{' '}
+          <span style={{ fontSize: '1.3em' }}>Z</span>IA
         </h1>
 
         {/* Tagline */}
