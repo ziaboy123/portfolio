@@ -334,7 +334,7 @@ export default function Hero() {
           }}
         >
           {[
-            { label: 'Projects', value: '6' },
+            { label: 'Projects', value: '10' },
             { label: 'Uptime', value: '24/7' },
             { label: 'Est.', value: '2026' },
             { label: 'Status', value: 'Building' },
