@@ -127,9 +127,9 @@ const EVENTS = [
   {
     seq: '14',
     type: 'launch',
-    title: "Zia's Panel — Physical Wall Panel, Live",
+    title: 'The Panel — Physical Wall Panel, Live',
     description: 'Wrote and deployed custom firmware for a 7-inch touchscreen mounted on the office wall — live status tiles for the home server, PC control, TV control, and more. Real hardware.',
-    tag: "Zia's Panel",
+    tag: 'The Panel',
     project: 'ZiasPanel',
   },
   {
