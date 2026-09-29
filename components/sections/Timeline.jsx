@@ -127,18 +127,18 @@ const EVENTS = [
   {
     seq: '14',
     type: 'launch',
-    title: 'The Panel — Physical Wall Panel, Live',
-    description: 'Wrote and deployed custom firmware for a 7-inch touchscreen mounted on the office wall — live status tiles for the home server, PC control, TV control, and more. Real hardware.',
-    tag: 'The Panel',
-    project: 'ZiasPanel',
-  },
-  {
-    seq: '15',
-    type: 'launch',
     title: 'The Grid — iOS App, Feature-Complete',
     description: 'Built a native iOS app for freeform notes and a daily dashboard — boards, a Today view with calendar and mail, Face ID lock, and a home screen widget. Running on my own phone.',
     tag: 'The Grid',
     project: 'TheGrid',
+  },
+  {
+    seq: '15',
+    type: 'launch',
+    title: 'The Panel — Physical Wall Panel, Live',
+    description: 'Wrote and deployed custom firmware for a 7-inch touchscreen mounted on the office wall — live status tiles for the home server, PC control, TV control, and more. Real hardware.',
+    tag: 'The Panel',
+    project: 'ZiasPanel',
   },
 ];
 
