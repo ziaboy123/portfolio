@@ -55,10 +55,12 @@ function RotatingWord() {
 function CountUp({ to }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
-  const [value, setValue] = useState(0);
+  // Server HTML carries the real number; the count-up from 0 only runs in the browser.
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
     if (!inView) return;
+    setValue(0);
     const controls = animate(0, to, { duration: 1.6, ease: EASE, delay: 0.9, onUpdate: (v) => setValue(Math.round(v)) });
     return () => controls.stop();
   }, [inView, to]);
