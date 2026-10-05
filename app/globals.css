@@ -947,7 +947,7 @@ a { color: inherit; }
 }
 .pd-stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
 }
 .pd-stat {
@@ -1041,7 +1041,6 @@ a { color: inherit; }
   .pd-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
-  .pd-stats { grid-template-columns: 1fr; }
   .pd-stack { grid-template-columns: 1fr 1fr; gap: 12px; }
   .pd-tech { min-height: 150px; padding: 22px; }
   .pd-mile { grid-template-columns: 1fr; gap: 6px; }
