@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0a0a0c" />
+        <meta name="theme-color" content="#000000" />
       </head>
       <body className="min-h-screen antialiased">
         {children}
