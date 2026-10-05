@@ -51,7 +51,7 @@ export default function Contact() {
       <div className="wrap">
         <div className="section-intro">
           <Reveal><div className="eyebrow">Contact</div></Reveal>
-          <Reveal delay={0.05}><h2 className="headline">Let&apos;s talk.</h2></Reveal>
+          <Reveal delay={0.05}><h2 className="headline">Get in touch.</h2></Reveal>
           <Reveal delay={0.1}>
             <p className="lede">
               Reach out via any of the channels below. More will be added as the ecosystem grows.
