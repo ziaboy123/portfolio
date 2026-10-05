@@ -29,7 +29,7 @@ function LineupCard({ project, index }) {
               </div>
               <div className="browser-view">
                 <Image
-                  src={project.screenshot}
+                  src={project.cover}
                   alt={`${project.name} screenshot`}
                   fill
                   sizes="(max-width: 900px) 100vw, 540px"
