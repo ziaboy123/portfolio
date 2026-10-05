@@ -8,6 +8,7 @@ import { EASE } from '@/components/ui/motion';
 
 const navLinks = [
   { label: 'Projects', id: 'projects', type: 'anchor' },
+  { label: 'Toolkit', id: 'toolkit', type: 'anchor' },
   { label: 'About', id: 'about', type: 'anchor' },
   { label: 'Timeline', id: 'timeline', type: 'page', href: '/timeline' },
   { label: 'Contact', id: 'contact', type: 'anchor' },
@@ -41,7 +42,7 @@ export default function Navigation() {
 
   useEffect(() => {
     if (!isHome) return;
-    const sections = ['hero', 'projects', 'about', 'timeline', 'contact'];
+    const sections = ['hero', 'projects', 'toolkit', 'about', 'timeline', 'contact'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -89,7 +90,7 @@ export default function Navigation() {
 
         <ul className="nav-links">
           {navLinks.map((link) => {
-            const isActive = link.type === 'page' ? pathname === link.href : isHome && active === link.id;
+            const isActive = link.type === 'page' ? pathname === link.href : (isHome && active === link.id) || (link.id === 'projects' && pathname.startsWith('/projects/'));
             return (
               <li key={link.id}>
                 <Link href={hrefFor(link)} onClick={clickFor(link)} className={`nav-link${isActive ? ' is-active' : ''}`}>

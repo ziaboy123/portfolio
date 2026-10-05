@@ -1,275 +1,74 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import SectionHeader from '@/components/ui/SectionHeader';
+import { useRef } from 'react';
+import Link from 'next/link';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { Reveal, Chevron, EASE } from '@/components/ui/motion';
+import { EVENTS, PROJECT_COLORS } from '@/lib/timeline';
+import { PROJECTS } from '@/lib/projects';
 
-function useReveal(threshold = 0.1) {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
-      { threshold }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [threshold]);
-  return [ref, visible];
+const SLUG_BY_KEY = Object.fromEntries(PROJECTS.map((p) => [p.timelineKey, p.slug]));
+
+function Tag({ event }) {
+  const slug = SLUG_BY_KEY[event.project];
+  const style = { '--accent': PROJECT_COLORS[event.project] || 'var(--fg-3)' };
+  if (!slug) {
+    return <span className="tl-tag" style={style}><i />{event.tag}</span>;
+  }
+  return (
+    <Link href={`/projects/${slug}`} className="tl-tag" style={style} transitionTypes={['nav-forward']}>
+      <i />{event.tag} <Chevron size={10} />
+    </Link>
+  );
 }
 
-const EVENTS = [
-  {
-    seq: '01',
-    type: 'milestone',
-    title: 'Nexus (Portfolio) Conceived',
-    description: 'Decided to build a central hub above all individual projects — a permanent home for the full ecosystem as it grows.',
-    tag: 'Foundation',
-    project: 'NEXUS',
-  },
-  {
-    seq: '02',
-    type: 'launch',
-    title: 'DeckForge — Initiated',
-    description: 'Started building a professional-grade Yu-Gi-Oh! deck builder and hand simulator. Established the landing page, auth flows, and core architecture.',
-    tag: 'DeckForge',
-    project: 'DeckForge',
-  },
-  {
-    seq: '03',
-    type: 'launch',
-    title: 'DeckForge — Deck Builder Live',
-    description: 'Shipped the core deck builder interface: full 13,000+ card database, search with filters, deck management, two-column layout, and a click-to-pin card preview panel.',
-    tag: 'DeckForge',
-    project: 'DeckForge',
-  },
-  {
-    seq: '04',
-    type: 'launch',
-    title: 'Cipher — Built & Shipped',
-    description: 'Built an ephemeral chat platform from scratch. Flask + SocketIO backend, in-memory rooms, zero persistence, zero accounts. Private by design.',
-    tag: 'Cipher',
-    project: 'Cipher',
-  },
-  {
-    seq: '05',
-    type: 'launch',
-    title: 'WatchMatch — Built & Shipped',
-    description: 'Built a personalised watch recommendation engine. Quiz flow, swipe mode, and a curated database of 100+ watches matched by lifestyle, budget, wrist size, and style.',
-    tag: 'WatchMatch',
-    project: 'WatchMatch',
-  },
-  {
-    seq: '06',
-    type: 'milestone',
-    title: 'Nexus (Portfolio) v1.0 — Live',
-    description: 'Portfolio launched at daniyalzia.co.uk. All three projects showcased. The ecosystem is now publicly visible.',
-    tag: 'Portfolio',
-    project: 'NEXUS',
-  },
-  {
-    seq: '07',
-    type: 'launch',
-    title: 'Home Server — Self-Hosted',
-    description: 'Set up and runs a home server hosting all projects — handling networking, routing, and uptime personally. No cloud providers, no managed hosting.',
-    tag: 'Infrastructure',
-    project: 'Infra',
-  },
-  {
-    seq: '08',
-    type: 'launch',
-    title: 'Full Ecosystem Live',
-    description: 'DeckForge, Cipher, WatchMatch, and the portfolio are all publicly accessible under daniyalzia.co.uk. Project links active across the portfolio.',
-    tag: 'Ecosystem',
-    project: 'All',
-  },
-  {
-    seq: '09',
-    type: 'launch',
-    title: 'The Five — Five-Agent AI Platform',
-    description: 'Grew a single private AI into five distinct Discord companions, each scoped to one part of everyday life — calendar and email, trip planning, casual chat, food tracking, and more. Personal infrastructure — not a public product.',
-    tag: 'The Five',
-    project: 'TheFive',
-  },
-  {
-    seq: '10',
-    type: 'launch',
-    title: 'Gambit — Built & Shipped',
-    description: 'Shipped a full 3D medieval chess experience — AI opponents at three difficulty tiers, real-time private multiplayer with room codes, cinematic capture animations, and a ranked match system with replays.',
-    tag: 'Gambit',
-    project: 'Gambit',
-  },
-  {
-    seq: '11',
-    type: 'launch',
-    title: 'Minecraft Server — Launched',
-    description: 'Turned a personal singleplayer world into a real 24/7 Minecraft server for a small group of friends — proper whitelist, real accounts, automatic backups. Self-hosted and self-maintained, not a rented box.',
-    tag: 'Minecraft Server',
-    project: 'MinecraftServer',
-  },
-  {
-    seq: '12',
-    type: 'launch',
-    title: 'Arc — Homelab Guardian, Live',
-    description: 'Built an always-on AI that watches over the home server and speaks up unprompted in Discord — infra health, security monitoring, live Minecraft admin, and presence detection, all from one voice that never needs to be asked.',
-    tag: 'Arc',
-    project: 'Arc',
-  },
-  {
-    seq: '13',
-    type: 'launch',
-    title: 'Beacon — Minecraft Admin Dashboard',
-    description: 'Shipped a private admin dashboard for the Minecraft server — live console, whitelist management, and a full inventory viewer rendering real armor, enchantments, and trims.',
-    tag: 'Beacon',
-    project: 'Beacon',
-  },
-  {
-    seq: '14',
-    type: 'launch',
-    title: 'The Grid — iOS App, Feature-Complete',
-    description: 'Built a native iOS app for freeform notes and a daily dashboard — boards, a Today view with calendar and mail, Face ID lock, and a home screen widget. Running on my own phone.',
-    tag: 'The Grid',
-    project: 'TheGrid',
-  },
-  {
-    seq: '15',
-    type: 'launch',
-    title: 'The Panel — Physical Wall Panel, Live',
-    description: 'Wrote and deployed custom firmware for a 7-inch touchscreen mounted on the office wall — live status tiles for the home server, PC control, TV control, and more. Real hardware.',
-    tag: 'The Panel',
-    project: 'ZiasPanel',
-  },
-];
-
-const TYPE_COLORS = {
-  milestone:     { dot: 'var(--red-bright)',  line: 'var(--red-dim)' },
-  launch:        { dot: '#22c55e',            line: '#14532d' },
-  infrastructure:{ dot: '#3b82f6',            line: '#1e3a5f' },
-  planned:       { dot: 'var(--text-muted)',  line: 'var(--border)' },
-};
-
-const PROJECT_COLORS = {
-  DeckForge: '#d97706',
-  Cipher:    '#6b7280',
-  WatchMatch:'#0ea5e9',
-  NEXUS:     'var(--red-bright)',
-  Portfolio: 'var(--red-bright)',
-  Infra:     '#3b82f6',
-  All:       '#22c55e',
-  TheFive: '#8b5cf6',
-  Gambit:    '#c4953a',
-  MinecraftServer: '#65a30d',
-  Arc:       '#e11d48',
-  Beacon:    '#0891b2',
-  ZiasPanel: '#f59e0b',
-  TheGrid:   '#d97757',
-};
-
-function TimelineItem({ event, index, isLast }) {
-  const [ref, visible] = useReveal(0.1);
-  const colors = TYPE_COLORS[event.type] || TYPE_COLORS.planned;
-  const isPlanned = event.type === 'planned';
-  const projColor = PROJECT_COLORS[event.project] || 'var(--text-muted)';
-
+function TimelineItem({ event }) {
+  const reduce = useReducedMotion();
   return (
-    <div
-      ref={ref}
-      style={{
-        display: 'grid',
-        gridTemplateColumns: '56px 40px 1fr',
-        gap: '0 20px',
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(16px)',
-        transition: `opacity 0.55s ease ${index * 0.07}s, transform 0.55s ease ${index * 0.07}s`,
-        minHeight: '72px',
-      }}
+    <motion.div
+      className="tl-item"
+      initial={reduce ? { opacity: 0 } : { opacity: 0, y: 32 }}
+      whileInView={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.8, ease: EASE }}
     >
-      {/* Sequence */}
-      <div style={{ paddingTop: '2px', textAlign: 'right', paddingRight: '4px' }}>
-        <span className="mono" style={{ fontSize: '13px', fontWeight: 700, color: isPlanned ? 'var(--text-faint)' : colors.dot, letterSpacing: '0.02em', opacity: isPlanned ? 0.5 : 1 }}>
-          {event.seq}
-        </span>
+      <div className={`tl-dot${event.type === 'milestone' ? ' is-milestone' : ''}`}>{event.seq}</div>
+      <div className="tl-card">
+        <Tag event={event} />
+        <h3>{event.title}</h3>
+        <p>{event.description}</p>
       </div>
-
-      {/* Spine */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: isPlanned ? 'var(--bg-elevated)' : colors.dot, border: `2px solid ${isPlanned ? 'var(--border)' : colors.dot}`, flexShrink: 0, marginTop: '4px', zIndex: 1 }} />
-        {!isLast && (
-          <div style={{ width: '1px', flex: 1, background: isPlanned ? 'var(--border-subtle)' : colors.line, marginTop: '4px', minHeight: '40px', opacity: isPlanned ? 0.4 : 0.7 }} />
-        )}
-      </div>
-
-      {/* Content */}
-      <div style={{ paddingBottom: '36px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px', flexWrap: 'wrap' }}>
-          <h3 style={{ fontSize: '16px', fontWeight: 600, color: isPlanned ? 'var(--text-muted)' : 'var(--text-primary)', letterSpacing: '-0.01em' }}>
-            {event.title}
-          </h3>
-          <span className="mono" style={{ padding: '2px 8px', background: 'var(--bg-elevated)', border: '1px solid var(--border-subtle)', fontSize: '10px', color: isPlanned ? 'var(--text-faint)' : projColor, letterSpacing: '0.1em', opacity: isPlanned ? 0.6 : 1 }}>
-            {event.tag.toUpperCase()}
-          </span>
-          {isPlanned && (
-            <span className="mono" style={{ fontSize: '10px', color: 'var(--text-faint)', letterSpacing: '0.08em' }}>UPCOMING</span>
-          )}
-        </div>
-        <p style={{ fontSize: '14px', color: isPlanned ? 'var(--text-faint)' : 'var(--text-muted)', lineHeight: 1.6, maxWidth: '520px' }}>
-          {event.description}
-        </p>
-      </div>
-    </div>
+    </motion.div>
   );
 }
 
 export default function Timeline() {
-  const [headerRef, headerVisible] = useReveal(0.2);
+  const listRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: listRef, offset: ['start 0.7', 'end 0.7'] });
+  const draw = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section
-      id="timeline"
-      style={{ padding: 'clamp(80px,10vw,120px) 0', background: 'var(--bg-surface)', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}
-    >
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-        <div
-          ref={headerRef}
-          style={{ opacity: headerVisible ? 1 : 0, transform: headerVisible ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}
-        >
-          <SectionHeader
-            eyebrow="Timeline"
-            title="The Record"
-            description="Every project launched, system built, and milestone reached — in order."
-          />
+    <section id="timeline" className="section" style={{ paddingTop: '140px' }}>
+      <div className="wrap">
+        <div className="section-intro">
+          <Reveal><div className="eyebrow">Timeline</div></Reveal>
+          <Reveal delay={0.05}><h1 className="headline">The Record.</h1></Reveal>
+          <Reveal delay={0.1}>
+            <p className="lede">Every project launched, system built, and milestone reached — in order.</p>
+          </Reveal>
         </div>
 
-        {/* Legend */}
-        <div style={{ display: 'flex', gap: '24px', marginBottom: '48px', flexWrap: 'wrap' }}>
-          {[
-            { color: 'var(--red-bright)', label: 'Milestone' },
-            { color: '#22c55e',           label: 'Launch' },
-            { color: 'var(--text-muted)', label: 'Planned' },
-          ].map(({ color, label }) => (
-            <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: color, display: 'inline-block' }} />
-              <span className="mono" style={{ fontSize: '10px', color: 'var(--text-muted)', letterSpacing: '0.1em' }}>{label.toUpperCase()}</span>
-            </div>
-          ))}
-        </div>
-
-        <div style={{ maxWidth: '700px' }}>
-          {EVENTS.map((event, i) => (
-            <TimelineItem key={event.seq} event={event} index={i} isLast={i === EVENTS.length - 1} />
-          ))}
-
-          {/* Future */}
-          <div style={{ display: 'grid', gridTemplateColumns: '56px 40px 1fr', gap: '0 20px', opacity: 0.2 }}>
-            <div />
-            <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '4px' }}>
-              <div style={{ width: '10px', height: '10px', border: '1.5px dashed var(--border)', borderRadius: '50%' }} />
-            </div>
-            <div className="mono" style={{ fontSize: '11px', color: 'var(--text-faint)', letterSpacing: '0.1em', paddingTop: '2px' }}>
-              FUTURE MILESTONES — ONGOING
-            </div>
+        <div className="tl" ref={listRef}>
+          <div className="tl-spine" aria-hidden="true">
+            <motion.span style={{ scaleY: draw }} />
           </div>
+          {EVENTS.map((event) => (
+            <TimelineItem key={event.seq} event={event} />
+          ))}
+          <Reveal className="tl-end">
+            <span />
+            More to come.
+          </Reveal>
         </div>
       </div>
     </section>

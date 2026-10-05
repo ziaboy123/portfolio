@@ -13,15 +13,16 @@ import {
   useTransform,
 } from 'framer-motion';
 import { EASE, Chevron } from '@/components/ui/motion';
+import { PROJECTS, PUBLIC_PROJECTS } from '@/lib/projects';
 
 const TAGLINE_WORDS = ['Systems.', 'Infrastructure.', 'Products.', 'Experiments.', 'Automation.'];
 const NAME = ['Daniyal', 'Zia.'];
 
 const STATS = [
-  { label: 'Projects', value: 10, count: true },
+  { label: 'Projects', value: PROJECTS.length, count: true },
+  { label: 'Live web apps', value: PUBLIC_PROJECTS.length, count: true },
+  { label: 'Self-hosted', value: '100%' },
   { label: 'Uptime', value: '24/7' },
-  { label: 'Est.', value: '2026' },
-  { label: 'Status', value: 'Building' },
 ];
 
 function RotatingWord() {
