@@ -14,6 +14,10 @@ const navLinks = [
   { label: 'Contact', id: 'contact', type: 'anchor' },
 ];
 
+function clearHash() {
+  if (window.location.hash) window.history.replaceState(null, '', window.location.pathname);
+}
+
 export default function Navigation() {
   const pathname = usePathname();
   const isHome = pathname === '/';
@@ -30,12 +34,15 @@ export default function Navigation() {
 
   // Arriving here via a cross-page link like /#projects: the browser tries to
   // jump to the hash before the client-rendered layout has settled (fonts,
-  // reveal animations, etc.), so it lands short. Re-scroll once mounted.
+  // reveal animations, etc.), so it lands short. Re-scroll once mounted, then
+  // drop the hash so a later refresh restores where you actually are instead
+  // of jumping back to that section.
   useEffect(() => {
     if (!isHome || !window.location.hash) return;
     const id = window.location.hash.slice(1);
     const timer = setTimeout(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      clearHash();
     }, 100);
     return () => clearTimeout(timer);
   }, [isHome]);
@@ -68,6 +75,7 @@ export default function Navigation() {
     if (!isHome) return; // let it navigate to /#id normally
     e.preventDefault();
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    clearHash();
   };
 
   const hrefFor = (link) => (link.type === 'page' ? link.href : isHome ? `#${link.id}` : `/#${link.id}`);
@@ -81,7 +89,7 @@ export default function Navigation() {
           className="nav-mark"
           onClick={(e) => {
             setMenuOpen(false);
-            if (isHome) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+            if (isHome) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); clearHash(); }
           }}
         >
           <span className="nav-mark-dot" />
