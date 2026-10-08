@@ -334,7 +334,7 @@ a { color: inherit; }
   top: 46%;
   margin: -31vmax 0 0 -31vmax;
   background: radial-gradient(circle at 50% 50%, rgba(185, 28, 28, 0.42), rgba(185, 28, 28, 0) 62%);
-  animation: auroraOrbit 16s ease-in-out infinite;
+  animation: auroraOrbit 13s ease-in-out infinite;
 }
 .aurora-b {
   width: 38vmax;
@@ -343,7 +343,7 @@ a { color: inherit; }
   top: 30%;
   margin: -19vmax 0 0 -19vmax;
   background: radial-gradient(circle, rgba(255, 106, 61, 0.26), rgba(255, 106, 61, 0) 65%);
-  animation: auroraRoamB 21s ease-in-out infinite;
+  animation: auroraRoamB 17s ease-in-out infinite;
 }
 .aurora-c {
   width: 34vmax;
@@ -352,7 +352,7 @@ a { color: inherit; }
   top: 62%;
   margin: -17vmax 0 0 -17vmax;
   background: radial-gradient(circle, rgba(150, 14, 46, 0.4), rgba(150, 14, 46, 0) 65%);
-  animation: auroraRoamC 27s ease-in-out infinite;
+  animation: auroraRoamC 22s ease-in-out infinite;
 }
 .hero-fade {
   position: absolute;
