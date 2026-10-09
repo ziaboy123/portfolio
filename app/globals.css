@@ -1009,6 +1009,19 @@ span.cap-proof { color: var(--fg-2); padding-left: 12px; }
     0 0 120px -30px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 .pd-phones > .phone-slot:nth-child(2) { margin-top: 64px; }
+.pd-banner {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+.pd-banner img {
+  width: min(640px, 100%);
+  height: auto;
+  image-rendering: pixelated;
+  border-radius: 10px;
+  border: 1px solid var(--hairline-hi);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9);
+}
 .pd-icon-hero {
   width: 176px;
   height: 176px;
