@@ -98,12 +98,14 @@ function ScreenshotHero({ project }) {
       <motion.div style={{ rotateX, scale }}>
         <ViewTransition name={`shot-${project.slug}`}>
           <Frame project={project}>
-            <div className="browser-bar">
-              <b style={{ background: '#ff5f57' }} />
-              <b style={{ background: '#febc2e' }} />
-              <b style={{ background: '#28c840' }} />
-              <span className="browser-url">{project.url ? hostOf(project) : project.frameLabel}</span>
-            </div>
+            {!project.bare && (
+              <div className="browser-bar">
+                <b style={{ background: '#ff5f57' }} />
+                <b style={{ background: '#febc2e' }} />
+                <b style={{ background: '#28c840' }} />
+                <span className="browser-url">{project.url ? hostOf(project) : project.frameLabel}</span>
+              </div>
+            )}
             <div className="browser-view">
               <Image
                 src={project.screenshot}
@@ -118,6 +120,16 @@ function ScreenshotHero({ project }) {
           </Frame>
         </ViewTransition>
       </motion.div>
+      {project.banner && (
+        <motion.div
+          className="pd-banner"
+          initial={reduce ? false : { opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: EASE, delay: 0.5 }}
+        >
+          <Image src={project.banner.src} alt={project.banner.alt} width={project.banner.width} height={project.banner.height} unoptimized />
+        </motion.div>
+      )}
     </div>
   );
 }
