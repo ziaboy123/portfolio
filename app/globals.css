@@ -989,6 +989,26 @@ span.cap-proof { color: var(--fg-2); padding-left: 12px; }
 .pd-ctas { display: flex; justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 36px; }
 .pd-stage { position: relative; max-width: 1080px; margin: 72px auto 0; perspective: 1800px; }
 .pd-stage .browser { transform-origin: 50% 100%; }
+.pd-phones {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(16px, 4vw, 48px);
+  margin: 72px auto 0;
+  padding-bottom: 40px;
+}
+.phone {
+  position: relative;
+  width: min(320px, 42vw);
+  aspect-ratio: 1206 / 2622;
+  border-radius: clamp(28px, 5vw, 52px);
+  overflow: hidden;
+  background: #000;
+  border: clamp(6px, 1vw, 10px) solid #1c1c1e;
+  box-shadow: 0 0 0 1px var(--hairline-hi), 0 50px 100px -30px rgba(0, 0, 0, 0.9),
+    0 0 120px -30px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.pd-phones > .phone-slot:nth-child(2) { margin-top: 64px; }
 .pd-icon-hero {
   width: 176px;
   height: 176px;
