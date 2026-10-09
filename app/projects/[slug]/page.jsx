@@ -17,6 +17,7 @@ export async function generateMetadata({ params }) {
   return {
     title: `${project.name} — Daniyal Zia`,
     description: project.tagline,
+    alternates: { canonical: `/projects/${project.slug}` },
     openGraph: { title: `${project.name} — Daniyal Zia`, description: project.description },
   };
 }

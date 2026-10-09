@@ -146,7 +146,7 @@ export default function Hero() {
         <motion.div {...fadeIn(0)}>
           <span className="hero-kicker">
             <span className="hero-kicker-dot" />
-            Computer Science · Software · Infrastructure
+            Junior IT Professional · Computer Science Student
           </span>
         </motion.div>
 

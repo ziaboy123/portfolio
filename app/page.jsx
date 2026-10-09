@@ -5,6 +5,8 @@ import About from '@/components/sections/About';
 import TimelineTeaser from '@/components/sections/TimelineTeaser';
 import Contact from '@/components/sections/Contact';
 
+export const metadata = { alternates: { canonical: '/' } };
+
 export default function Home() {
   return (
     <main>

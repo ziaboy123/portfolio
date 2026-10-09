@@ -18,7 +18,11 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="wrap footer-inner">
-        <span>Copyright © {year} Daniyal Zia.</span>
+        <span className="footer-legal">
+          <span>Copyright © {year} Daniyal Zia.</span>
+          <Link href="/privacy">Privacy</Link>
+          <Link href="/terms">Terms</Link>
+        </span>
         <nav className="footer-links">
           {LINKS.map(({ label, id, href }) => (
             <Link
