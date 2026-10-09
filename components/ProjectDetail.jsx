@@ -53,6 +53,13 @@ function IconHero({ project }) {
   );
 }
 
+// Live projects link out; private ones (LAN-only, personal) are just a picture.
+function Frame({ project, children }) {
+  return project.url
+    ? <a href={project.url} target="_blank" rel="noopener noreferrer" className="browser" style={{ display: 'block' }} aria-label={`Open ${project.name}`}>{children}</a>
+    : <div className="browser">{children}</div>;
+}
+
 function ScreenshotHero({ project }) {
   const ref = useRef(null);
   const reduce = useReducedMotion();
@@ -60,17 +67,16 @@ function ScreenshotHero({ project }) {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.6', 'end start'] });
   const rotateX = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -14]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 0.9]);
-
   return (
     <div className="pd-stage" ref={ref}>
       <motion.div style={{ rotateX, scale }}>
         <ViewTransition name={`shot-${project.slug}`}>
-          <a href={project.url} target="_blank" rel="noopener noreferrer" className="browser" style={{ display: 'block' }} aria-label={`Open ${project.name}`}>
+          <Frame project={project}>
             <div className="browser-bar">
               <b style={{ background: '#ff5f57' }} />
               <b style={{ background: '#febc2e' }} />
               <b style={{ background: '#28c840' }} />
-              <span className="browser-url">{hostOf(project)}</span>
+              <span className="browser-url">{project.url ? hostOf(project) : project.frameLabel}</span>
             </div>
             <div className="browser-view">
               <Image
@@ -83,7 +89,7 @@ function ScreenshotHero({ project }) {
                 style={{ objectFit: 'cover', objectPosition: 'top center' }}
               />
             </div>
-          </a>
+          </Frame>
         </ViewTransition>
       </motion.div>
     </div>
@@ -130,7 +136,7 @@ export default function ProjectDetail({ project, stack, milestones, prev, next }
           )}
         </div>
         <div className="wrap">
-          {isPublic ? <ScreenshotHero project={project} /> : <IconHero project={project} />}
+          {project.screenshot ? <ScreenshotHero project={project} /> : <IconHero project={project} />}
         </div>
       </header>
 
