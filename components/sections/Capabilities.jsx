@@ -73,8 +73,8 @@ export default function Capabilities() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="lede">
-              I design, build, ship and run every layer myself: interfaces, backends, real-time systems,
-              AI agents, native apps, firmware and the servers underneath.
+              Interfaces, backends, real-time systems, AI agents, native apps, firmware,
+              and the servers they run on.
             </p>
           </Reveal>
         </div>

@@ -115,7 +115,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <Reveal className="group-label">Built for home · Personal systems on my own hardware</Reveal>
+        <Reveal className="group-label">Built for home · Personal systems</Reveal>
         <div className="minis">
           {PERSONAL_PROJECTS.map((project, i) => (
             <MiniTile key={project.slug} project={project} index={i} />

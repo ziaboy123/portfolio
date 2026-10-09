@@ -158,7 +158,7 @@ export default function ProjectDetail({ project, stack, milestones, prev, next }
           </div>
           <Reveal delay={0.1}>
             <p className="lede" style={{ maxWidth: '420px' }}>
-              {stack.length} technologies, designed, built and run end to end by me.
+              The technologies behind {project.name}.
             </p>
           </Reveal>
         </div>
@@ -201,7 +201,7 @@ export default function ProjectDetail({ project, stack, milestones, prev, next }
           <Reveal className="pd-cta-band" y={48} amount={0.3}>
             <h2 className="headline">Try {project.name}.</h2>
             <p className="lede" style={{ margin: '16px auto 32px', maxWidth: '520px' }}>
-              It&apos;s live and free to use, self-hosted on my own hardware.
+              It&apos;s live and free to use.
             </p>
             <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-pill btn-primary">
               Open {project.name}
