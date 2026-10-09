@@ -6,7 +6,7 @@ export const metadata = {
   alternates: { canonical: '/privacy' },
 };
 
-const EMAIL = 'daniyal.zia1@outlook.com';
+const EMAIL = 'daniyal@daniyalzia.co.uk';
 
 export default function PrivacyPage() {
   return (
@@ -48,6 +48,12 @@ export default function PrivacyPage() {
         Everything else runs on servers in the United Kingdom.
       </p>
 
+      <h2>Emailing me</h2>
+      <p>
+        Email sent to <a href={`mailto:${EMAIL}`}>{EMAIL}</a> is passed on by Cloudflare&apos;s email routing to my
+        personal inbox. It&apos;s used only to reply to you and isn&apos;t added to any mailing list.
+      </p>
+
       <h2>The projects</h2>
       <p>
         <strong>Cipher</strong>{' '}keeps messages in memory only while a room is open; they are never written to disk.
@@ -74,7 +80,7 @@ export default function PrivacyPage() {
       <h2>Sharing</h2>
       <p>
         Your information is never sold, never used for advertising, and never shared with anyone else, apart from
-        Cloudflare as described above, or if the law requires it.
+        Cloudflare and my email provider as described above, or if the law requires it.
       </p>
 
       <h2>Your rights</h2>

@@ -6,7 +6,7 @@ export const metadata = {
   alternates: { canonical: '/terms' },
 };
 
-const EMAIL = 'daniyal.zia1@outlook.com';
+const EMAIL = 'daniyal@daniyalzia.co.uk';
 
 export default function TermsPage() {
   return (
