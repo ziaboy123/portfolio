@@ -1,6 +1,6 @@
 import Hero from '@/components/sections/Hero';
 import Projects from '@/components/sections/Projects';
-import Toolkit from '@/components/sections/Toolkit';
+import Capabilities from '@/components/sections/Capabilities';
 import About from '@/components/sections/About';
 import TimelineTeaser from '@/components/sections/TimelineTeaser';
 import Contact from '@/components/sections/Contact';
@@ -10,7 +10,7 @@ export default function Home() {
     <main>
       <Hero />
       <Projects />
-      <Toolkit />
+      <Capabilities />
       <About />
       <TimelineTeaser />
       <Contact />

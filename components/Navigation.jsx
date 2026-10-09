@@ -8,7 +8,7 @@ import { EASE } from '@/components/ui/motion';
 
 const navLinks = [
   { label: 'Projects', id: 'projects', type: 'anchor' },
-  { label: 'Toolkit', id: 'toolkit', type: 'anchor' },
+  { label: 'Capabilities', id: 'capabilities', type: 'anchor' },
   { label: 'About', id: 'about', type: 'anchor' },
   { label: 'Timeline', id: 'timeline', type: 'page', href: '/timeline' },
   { label: 'Contact', id: 'contact', type: 'anchor' },
@@ -49,7 +49,7 @@ export default function Navigation() {
 
   useEffect(() => {
     if (!isHome) return;
-    const sections = ['hero', 'projects', 'toolkit', 'about', 'timeline', 'contact'];
+    const sections = ['hero', 'projects', 'capabilities', 'about', 'timeline', 'contact'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
