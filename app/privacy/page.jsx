@@ -12,7 +12,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy."
-      updated="9 October 2026"
+      updated="10 October 2026"
       intro="What this website and the projects on it collect, why, and what you can do about it. The short version: no ads, no tracking cookies, and nothing is ever sold or shared."
     >
       <h2>Who is responsible</h2>
@@ -56,8 +56,10 @@ export default function PrivacyPage() {
 
       <h2>The projects</h2>
       <p>
-        <strong>Cipher</strong>{' '}keeps messages in memory only while a room is open; they are never written to disk.
-        It sets one essential cookie that keeps you in your room and protects its forms.
+        <strong>Cipher</strong>{' '}encrypts messages in your browser before they&apos;re sent. The server only passes them
+        on, can&apos;t read them, and doesn&apos;t keep them. The room key stays in the invite link and in that browser
+        tab&apos;s session storage until you leave. It sets one essential cookie that keeps you in your room and protects
+        its forms.
       </p>
       <p>
         <strong>WatchMatch</strong>{' '}keeps your quiz answers in your browser. Nothing is stored on the server.
