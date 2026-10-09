@@ -53,6 +53,32 @@ function IconHero({ project }) {
   );
 }
 
+// iOS apps: two iPhone frames side by side, settling back as you scroll past.
+function PhoneHero({ project }) {
+  const ref = useRef(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.6', 'end start'] });
+  const lift = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -60]);
+  const drop = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 40]);
+
+  return (
+    <div className="pd-phones" ref={ref}>
+      {project.phoneShots.map((src, i) => (
+        <motion.div key={src} className="phone-slot" style={{ y: i === 0 ? lift : drop }}>
+          <motion.div
+            className="phone"
+            initial={reduce ? false : { opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, ease: EASE, delay: 0.2 + i * 0.12 }}
+          >
+            <Image src={src} alt={`${project.name} on iPhone, screen ${i + 1}`} fill priority quality={90} sizes="(max-width: 640px) 45vw, 320px" style={{ objectFit: 'cover' }} />
+          </motion.div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
 // Live projects link out; private ones (LAN-only, personal) are just a picture.
 function Frame({ project, children }) {
   return project.url
@@ -136,7 +162,7 @@ export default function ProjectDetail({ project, stack, milestones, prev, next }
           )}
         </div>
         <div className="wrap">
-          {project.screenshot ? <ScreenshotHero project={project} /> : <IconHero project={project} />}
+          {project.phoneShots ? <PhoneHero project={project} /> : project.screenshot ? <ScreenshotHero project={project} /> : <IconHero project={project} />}
         </div>
       </header>
 
