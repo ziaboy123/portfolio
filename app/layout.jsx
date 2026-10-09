@@ -25,6 +25,8 @@ export const metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
+  // Google Search Console ownership check (public by design)
+  verification: { google: 'EkP7gbzIk3hOtQj_5sIHv7aK7xga0aKbSG-nXo6JJQc' },
 };
 
 // Tells search engines this site is the official home of a person named
