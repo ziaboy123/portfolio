@@ -56,10 +56,10 @@ export default function PrivacyPage() {
 
       <h2>The projects</h2>
       <p>
-        <strong>Cipher</strong>{' '}encrypts messages in your browser before they&apos;re sent. The server only passes them
-        on, can&apos;t read them, and doesn&apos;t keep them. The room key stays in the invite link and in that browser
-        tab&apos;s session storage until you leave. It sets one essential cookie that keeps you in your room and protects
-        its forms.
+        <strong>Cipher</strong>{' '}encrypts messages and display names in your browser before they&apos;re sent. The server
+        only passes them on, can&apos;t read them, and doesn&apos;t keep them. The room key stays in the invite link and in
+        that browser tab&apos;s session storage until you leave, and the tab also remembers the name you typed. It sets one
+        essential cookie that keeps you in your room and protects its forms.
       </p>
       <p>
         <strong>WatchMatch</strong>{' '}keeps your quiz answers in your browser. Nothing is stored on the server.
