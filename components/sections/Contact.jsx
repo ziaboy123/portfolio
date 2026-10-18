@@ -32,9 +32,9 @@ const CHANNELS = [
   {
     id: 'email',
     label: 'Email',
-    handle: 'daniyal@daniyalzia.co.uk',
+    handle: 'mail@daniyalzia.co.uk',
     description: 'Direct communication for collaborations and inquiries.',
-    href: 'mailto:daniyal@daniyalzia.co.uk',
+    href: 'mailto:mail@daniyalzia.co.uk',
     action: 'Send a message',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
