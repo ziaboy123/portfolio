@@ -6,7 +6,7 @@ export const metadata = {
   alternates: { canonical: '/privacy' },
 };
 
-const EMAIL = 'daniyal@daniyalzia.co.uk';
+const EMAIL = 'mail@daniyalzia.co.uk';
 
 export default function PrivacyPage() {
   return (
