@@ -88,6 +88,11 @@ export default function PrivacyPage() {
         the room and isn&apos;t saved. Deleting your account in its Settings removes it from both sites, decks included.
       </p>
       <p>
+        DeckForge and Millennium Arena show card pictures straight from YGOPRODeck&apos;s image server, and Millennium
+        Arena loads its fonts from Google Fonts. Your browser fetches these directly, so those services see your IP
+        address, but they never receive any account data.
+      </p>
+      <p>
         Account data is used only to run the account you asked for, and is kept until you delete it or ask for it to be
         deleted.
       </p>
@@ -95,7 +100,8 @@ export default function PrivacyPage() {
       <h2>Sharing</h2>
       <p>
         Your information is never sold, never used for advertising, and never shared with anyone else, apart from
-        Cloudflare, Resend and my email provider as described above, or if the law requires it.
+        the services named above (Cloudflare, Resend, my email provider, YGOPRODeck and Google Fonts), or if the law
+        requires it.
       </p>
 
       <h2>Your rights</h2>
