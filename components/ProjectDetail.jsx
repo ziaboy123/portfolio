@@ -128,6 +128,9 @@ function ScreenshotHero({ project }) {
           transition={{ duration: 0.9, ease: EASE, delay: 0.5 }}
         >
           <Image src={project.banner.src} alt={project.banner.alt} width={project.banner.width} height={project.banner.height} unoptimized />
+          {project.banner.credit && (
+            <Link href={project.banner.credit.href} className="pd-banner-credit">{project.banner.credit.text}</Link>
+          )}
         </motion.div>
       )}
     </div>
