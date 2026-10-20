@@ -45,8 +45,8 @@ export default function TermsPage() {
         Zia is responsible for keeping them safe and for dealing with reports and complaints about them.
       </p>
       <p>
-        <strong>What isn&apos;t allowed.</strong>{' '}Illegal content of any kind, including child sexual abuse material,
-        terrorist content, threats, harassment and fraud.
+        <strong>What isn&apos;t allowed.</strong>{' '}Illegal content of any kind, including child sexual exploitation and
+        abuse (such as grooming and abuse images), terrorist content, threats, harassment and fraud.
       </p>
       <p>
         <strong>How to report it.</strong>{' '}Email <a href={`mailto:${EMAIL}?subject=${encodeURIComponent('Report')}`}>{EMAIL}</a>{' '}
@@ -54,8 +54,10 @@ export default function TermsPage() {
       </p>
       <p>
         <strong>What happens next.</strong>{' '}Every report is reviewed promptly by a person. Illegal content is removed,
-        and accounts used to share it are suspended or deleted. Child sexual abuse material is reported to the National
-        Crime Agency, as UK law requires. Nothing you share is scanned automatically, so reports are how problems are found.
+        and accounts used to share it are suspended or deleted. Child sexual exploitation and abuse, including grooming and
+        abuse images, is reported to the National Crime Agency, as UK law requires. Nothing you share is scanned
+        automatically, except that Millennium Arena&apos;s Unranked chat blocks links and contact details (like emails,
+        phone numbers and social handles) before they&apos;re sent. Otherwise, reports are how problems are found.
       </p>
       <p>
         <strong>Complaints and appeals.</strong>{' '}If you think content was removed or an account suspended by mistake, or
