@@ -1,9 +1,11 @@
 import LegalPage from '@/components/LegalPage';
+import { sharing } from '@/lib/seo';
 
 export const metadata = {
   title: 'Terms — Daniyal Zia',
   description: 'The terms for using daniyalzia.co.uk and the projects on it.',
   alternates: { canonical: '/terms' },
+  ...sharing({ title: 'Terms — Daniyal Zia', description: 'The terms for using daniyalzia.co.uk and the projects on it.', path: '/terms' }),
 };
 
 const EMAIL = 'mail@daniyalzia.co.uk';

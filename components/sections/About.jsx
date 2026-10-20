@@ -106,7 +106,7 @@ export default function About() {
   return (
     <section id="about" className="section">
       <div className="wrap">
-        <Reveal><div className="eyebrow" style={{ marginBottom: '20px' }}>About · Still learning</div></Reveal>
+        <Reveal><h2 className="eyebrow" style={{ marginBottom: '20px' }}>About · Still learning</h2></Reveal>
         <ScrollStatement text={STATEMENT} />
 
         <div className="about-grid">

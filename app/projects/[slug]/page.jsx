@@ -3,6 +3,7 @@ import ProjectDetail from '@/components/ProjectDetail';
 import { PROJECTS, getProject } from '@/lib/projects';
 import { roleOf } from '@/lib/tech';
 import { EVENTS } from '@/lib/timeline';
+import { sharing } from '@/lib/seo';
 
 export const dynamicParams = false;
 
@@ -18,7 +19,12 @@ export async function generateMetadata({ params }) {
     title: `${project.name} — Daniyal Zia`,
     description: project.tagline,
     alternates: { canonical: `/projects/${project.slug}` },
-    openGraph: { title: `${project.name} — Daniyal Zia`, description: project.description },
+    ...sharing({
+      title: `${project.name} — Daniyal Zia`,
+      description: project.description,
+      path: `/projects/${project.slug}`,
+      image: project.cover ?? project.screenshot,
+    }),
   };
 }
 
