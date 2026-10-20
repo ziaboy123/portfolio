@@ -20,7 +20,7 @@ export default function TermsPage() {
       <h2>Using the projects</h2>
       <p>
         Cipher, Gambit, WatchMatch, DeckForge and Millennium Arena are free to use. They are personal projects, provided as they are,
-        and may change, pause or go offline at any time without notice.
+        and may change, pause or go offline at any time without notice. You must be 13 or older to use Cipher.
       </p>
 
       <h2>Accounts</h2>

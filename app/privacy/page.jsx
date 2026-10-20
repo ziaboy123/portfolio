@@ -121,7 +121,8 @@ export default function PrivacyPage() {
 
       <h2>Children</h2>
       <p>
-        The projects with accounts are for people aged 13 or over. If you think a child under 13 has an account, email{' '}
+        Cipher and the projects with accounts are for people aged 13 or over. If you think a child under 13 has an
+        account, email{' '}
         <a href={`mailto:${EMAIL}`}>{EMAIL}</a> and it will be deleted.
       </p>
 
