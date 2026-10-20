@@ -35,7 +35,7 @@ function TimelineItem({ event }) {
       <div className={`tl-dot${event.type === 'milestone' ? ' is-milestone' : ''}`}>{event.seq}</div>
       <div className="tl-card">
         <Tag event={event} />
-        <h3>{event.title}</h3>
+        <h2>{event.title}</h2>
         <p>{event.description}</p>
       </div>
     </motion.div>

@@ -27,11 +27,14 @@ const STATS = [
 
 function RotatingWord() {
   const [index, setIndex] = useState(0);
+  const reduce = useReducedMotion();
 
+  // reduced motion: one word, no sliding
   useEffect(() => {
+    if (reduce) return;
     const id = setInterval(() => setIndex((i) => (i + 1) % TAGLINE_WORDS.length), 2600);
     return () => clearInterval(id);
-  }, []);
+  }, [reduce]);
 
   return (
     <motion.span layout className="hero-rotator" transition={{ layout: { duration: 0.5, ease: EASE } }}>

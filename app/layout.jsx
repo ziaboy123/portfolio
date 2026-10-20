@@ -63,6 +63,10 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
+        {/* without JavaScript the entrance animations never run, so show everything they'd fade in */}
+        <noscript>
+          <style>{'[style*="opacity:0"]{opacity:1!important;transform:none!important;filter:none!important}'}</style>
+        </noscript>
         {/* Self-hosted Umami: cookieless, no IPs stored, live domain only, honours Do Not Track (see /privacy).
             Production only, since /insights/ only exists behind the live server. */}
         {process.env.NODE_ENV === 'production' && (
