@@ -12,18 +12,19 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms."
-      updated="9 October 2026"
+      updated="20 October 2026"
       intro="The terms for using daniyalzia.co.uk and the projects hosted on it. By using the site, you agree to them."
     >
       <h2>Using the projects</h2>
       <p>
-        Cipher, Gambit, WatchMatch and DeckForge are free to use. They are personal projects, provided as they are,
+        Cipher, Gambit, WatchMatch, DeckForge and Millennium Arena are free to use. They are personal projects, provided as they are,
         and may change, pause or go offline at any time without notice.
       </p>
 
       <h2>Accounts</h2>
       <p>
-        If you create an account on Gambit or DeckForge, keep your password safe and don&apos;t share your account. Accounts
+        If you create an account on Gambit, DeckForge or Millennium Arena, keep your password safe and don&apos;t share your
+        account. Millennium Arena also has its own short terms (including a minimum age of 13), which apply alongside these. Accounts
         used to cheat, spam, harass others or attack the service may be suspended or removed. You can ask for your account
         to be deleted at any time.
       </p>
