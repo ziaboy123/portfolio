@@ -15,7 +15,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy."
-      updated="20 October 2026"
+      updated="21 October 2026"
       intro="What this website and the projects on it collect, why, and what you can do about it. The short version: no tracking cookies, and nothing is ever sold or used for advertising."
     >
       <h2>Who is responsible</h2>
@@ -80,7 +80,9 @@ export default function PrivacyPage() {
         <strong>Gambit</strong>{' '}can be played as a guest. If you create an account, it stores your username, your
         password (only as a secure scrypt hash), your rating, your match history (including the player names shown in
         each game) and your puzzle progress. Your sign-in and board theme are remembered in your browser&apos;s local
-        storage.
+        storage. Online games are saved with the names shown in them. Your username, rating and results appear on the
+        public leaderboard, and match replays can be viewed by anyone with the link. Games between guests are deleted
+        after 90 days.
       </p>
       <p>
         <strong>DeckForge</strong>{' '}needs an account, which stores your email address, an optional display name, your

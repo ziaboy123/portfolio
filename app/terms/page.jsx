@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms."
-      updated="20 October 2026"
+      updated="21 October 2026"
       intro="The terms for using daniyalzia.co.uk and the projects hosted on it. By using the site, you agree to them."
     >
       <h2>Using the projects</h2>
@@ -51,6 +51,7 @@ export default function TermsPage() {
       <p>
         <strong>How to report it.</strong>{' '}Email <a href={`mailto:${EMAIL}?subject=${encodeURIComponent('Report')}`}>{EMAIL}</a>{' '}
         with the room code, username or link, and what happened. You don&apos;t need an account to report something.
+        Gambit&apos;s &ldquo;Report a player or name&rdquo; link opens this email for you.
       </p>
       <p>
         <strong>What happens next.</strong>{' '}Every report is reviewed promptly by a person. Illegal content is removed,
