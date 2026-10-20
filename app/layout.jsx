@@ -67,16 +67,22 @@ export default function RootLayout({ children }) {
         <noscript>
           <style>{'[style*="opacity:0"]{opacity:1!important;transform:none!important;filter:none!important}'}</style>
         </noscript>
-        {/* Self-hosted Umami: cookieless, no IPs stored, live domain only, honours Do Not Track (see /privacy).
+        {/* Self-hosted Umami: cookieless, no IPs stored, live domain only, honours Do Not Track, Global Privacy Control
+            and the /privacy switch (see /privacy).
             Production only, since /insights/ only exists behind the live server. */}
         {process.env.NODE_ENV === 'production' && (
-          <script
-            defer
-            src="/insights/script.js"
-            data-website-id="b80f9afb-e7c2-4627-8610-a9b70456da11"
-            data-domains="daniyalzia.co.uk"
-            data-do-not-track="true"
-          />
+          <>
+            {/* Global Privacy Control means "don't count me": Umami calls this before every send and drops the visit */}
+            <script dangerouslySetInnerHTML={{ __html: 'window.umamiBeforeSend=function(t,p){return navigator.globalPrivacyControl===true?false:p}' }} />
+            <script
+              defer
+              src="/insights/script.js"
+              data-website-id="b80f9afb-e7c2-4627-8610-a9b70456da11"
+              data-domains="daniyalzia.co.uk"
+              data-do-not-track="true"
+              data-before-send="umamiBeforeSend"
+            />
+          </>
         )}
       </head>
       <body className="min-h-screen antialiased">
