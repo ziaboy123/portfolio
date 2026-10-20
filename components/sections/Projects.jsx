@@ -113,6 +113,16 @@ export default function Projects() {
           {PUBLIC_PROJECTS.map((project, i) => (
             <LineupCard key={project.slug} project={project} index={i} />
           ))}
+          {/* fills the last row when the count is odd */}
+          {PUBLIC_PROJECTS.length % 2 === 1 && (
+            <Reveal className="lineup-card lineup-future" amount={0.4}>
+              <svg width="22" height="22" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M9 2v14M2 9h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              <h3>Coming soon</h3>
+              <p>The next live project is in the works.</p>
+            </Reveal>
+          )}
         </div>
 
         <Reveal className="group-label">Built for home · Personal systems</Reveal>

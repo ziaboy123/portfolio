@@ -12,7 +12,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy."
-      updated="10 October 2026"
+      updated="20 October 2026"
       intro="What this website and the projects on it collect, why, and what you can do about it. The short version: no ads, no tracking cookies, and nothing is ever sold or shared."
     >
       <h2>Who is responsible</h2>
@@ -45,7 +45,8 @@ export default function PrivacyPage() {
         Traffic to this site passes through Cloudflare, which protects it and delivers it quickly. Cloudflare
         processes your IP address to do that, as described in{' '}
         <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare&apos;s privacy policy</a>.
-        Everything else runs on servers in the United Kingdom.
+        Everything else runs on servers in the United Kingdom, apart from Millennium Arena&apos;s emails, which are sent
+        through Resend in Ireland (see below).
       </p>
 
       <h2>Emailing me</h2>
@@ -72,7 +73,19 @@ export default function PrivacyPage() {
       </p>
       <p>
         <strong>DeckForge</strong>{' '}needs an account, which stores your email address, an optional display name, your
-        password (only as a secure bcrypt hash) and the decks you build. An essential cookie keeps you signed in.
+        password (only as a secure bcrypt hash) and the decks you build. An essential cookie keeps you signed in. The same
+        account and decks are used by Millennium Arena.
+      </p>
+      <p>
+        <strong>Millennium Arena</strong>{' '}uses your DeckForge account, plus a username and your settings. It also stores your
+        match history (who you played, the result, your deck&apos;s name and how long it took), how often you play each card,
+        and your logins and any devices you choose to trust, kept only as hashed random keys. Codes for signing up, new
+        devices and password resets are emailed through{' '}
+        <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Resend</a>, an email
+        delivery service in Ireland, and expire after 10 minutes. One essential cookie keeps you signed in, and a second
+        remembers a trusted device for 30 days; your theme and duel choices are kept in your browser. Other players see your
+        username and your win/loss record, never your email, decks or match history. Room chat goes only to the people in
+        the room and isn&apos;t saved. Deleting your account in its Settings removes it from both sites, decks included.
       </p>
       <p>
         Account data is used only to run the account you asked for, and is kept until you delete it or ask for it to be
@@ -82,7 +95,7 @@ export default function PrivacyPage() {
       <h2>Sharing</h2>
       <p>
         Your information is never sold, never used for advertising, and never shared with anyone else, apart from
-        Cloudflare and my email provider as described above, or if the law requires it.
+        Cloudflare, Resend and my email provider as described above, or if the law requires it.
       </p>
 
       <h2>Your rights</h2>
