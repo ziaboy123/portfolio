@@ -39,7 +39,7 @@ export default function PrivacyPage() {
       <p>
         <strong>Server logs.</strong>{' '}The web server records which page was requested, when, and the browser
         type, for security and troubleshooting. These logs don&apos;t include your IP address and are deleted after
-        14 days.
+        14 days. Visits to Cipher and Genie aren&apos;t logged at all.
       </p>
       <p>
         <strong>Cookies.</strong>{' '}This website sets no cookies.
@@ -54,7 +54,7 @@ export default function PrivacyPage() {
       </p>
       <p>
         <strong>Outside the UK.</strong>{' '}Cloudflare, Microsoft (which hosts my inbox) and Resend (which sends
-        Millennium Arena&apos;s emails) are US companies, so some of your data may be handled outside the UK. Those
+        Millennium Arena&apos;s and Genie&apos;s emails) are US companies, so some of your data may be handled outside the UK. Those
         transfers are covered by the UK-US data bridge (the UK Extension to the EU-US Data Privacy Framework) or by
         UK-approved data transfer clauses.
       </p>
@@ -99,6 +99,12 @@ export default function PrivacyPage() {
         remembers a trusted device for 30 days; your theme and duel choices are kept in your browser. Other players see your
         username and your win/loss record, never your email, decks or match history. Room chat goes only to the people in
         the room and isn&apos;t saved. Deleting your account in its Settings removes it from both sites, decks included.
+      </p>
+      <p>
+        <strong>Genie</strong>, the wishlist site, has its own <a href="/genie/privacy">privacy notice</a>, which covers
+        your account, your lists and what people who open a shared list leave behind. In short: no tracking or ads, its
+        code emails are sent through Resend, and accounts that haven&apos;t been used for two years are deleted after a
+        warning email.
       </p>
       <p>
         DeckForge and Millennium Arena show card pictures straight from YGOPRODeck&apos;s image server, and Millennium
