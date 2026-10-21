@@ -19,15 +19,16 @@ export default function TermsPage() {
     >
       <h2>Using the projects</h2>
       <p>
-        Cipher, Gambit, WatchMatch, DeckForge and Millennium Arena are free to use. They are personal projects, provided as they are,
+        Cipher, Gambit, WatchMatch, DeckForge, Millennium Arena and Genie are free to use. They are personal projects, provided as they are,
         and may change, pause or go offline at any time without notice. You must be 13 or older to use Cipher.
       </p>
 
       <h2>Accounts</h2>
       <p>
-        If you create an account on Gambit, DeckForge or Millennium Arena, keep your password safe and don&apos;t share your
-        account. You must be 13 or older to create an account on any of these projects. Millennium Arena also has its own
-        short terms, which apply alongside these. Accounts
+        If you create an account on Gambit, DeckForge, Millennium Arena or Genie, keep your password safe and don&apos;t share your
+        account. You must be 13 or older to create an account on any of these projects. Millennium Arena and Genie also have their own terms,
+        which apply alongside these: see <a href="/millenniumarena/terms">Millennium Arena&apos;s terms</a> and{' '}
+        <a href="/genie/terms">Genie&apos;s terms</a>. Accounts
         used to cheat, spam, harass others or attack the service may be suspended or removed. You can ask for your account
         to be deleted at any time.
       </p>
@@ -41,8 +42,8 @@ export default function TermsPage() {
 
       <h2 id="reporting">Reporting content and complaints</h2>
       <p>
-        Cipher, Gambit and Millennium Arena let people send messages, usernames and other content to each other. Daniyal
-        Zia is responsible for keeping them safe and for dealing with reports and complaints about them.
+        Cipher, Gambit, Millennium Arena and Genie let people share messages, usernames, wishlists and other content with
+        each other. Daniyal Zia is responsible for keeping them safe and for dealing with reports and complaints about them.
       </p>
       <p>
         <strong>What isn&apos;t allowed.</strong>{' '}Illegal content of any kind, including child sexual exploitation and
@@ -51,7 +52,8 @@ export default function TermsPage() {
       <p>
         <strong>How to report it.</strong>{' '}Email <a href={`mailto:${EMAIL}?subject=${encodeURIComponent('Report')}`}>{EMAIL}</a>{' '}
         with the room code, username or link, and what happened. You don&apos;t need an account to report something.
-        Gambit&apos;s &ldquo;Report a player or name&rdquo; link opens this email for you.
+        Gambit&apos;s &ldquo;Report a player or name&rdquo; link opens this email for you, and every shared Genie list has a
+        &ldquo;Report this list&rdquo; link; Genie&apos;s own terms explain how its reports are handled.
       </p>
       <p>
         <strong>What happens next.</strong>{' '}Every report is reviewed promptly by a person. Illegal content is removed,
