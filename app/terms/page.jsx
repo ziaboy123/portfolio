@@ -79,9 +79,18 @@ export default function TermsPage() {
       <h2>Content and trademarks</h2>
       <p>
         The design and writing on this site are © Daniyal Zia. Source code published on GitHub is covered by the licence in
-        each repository. Yu-Gi-Oh! card names and images belong to Konami, card data comes from YGOPRODeck, and watch names and
-        images belong to their respective brands. They are used for identification only, and none of these companies is
-        affiliated with this site.
+        each repository. Yu-Gi-Oh! card names and images belong to Konami and card data comes from YGOPRODeck. They are
+        used for identification only, and neither company is affiliated with this site.
+      </p>
+      <p>
+        Watch photos come from Wikimedia Commons and are used under Creative Commons licences. Each photographer, licence
+        and source is listed on WatchMatch&apos;s <a href="/watchmatch/credits">photo credits page</a>. Watch brand and
+        model names belong to their makers and are only used to say which watch is which; WatchMatch isn&apos;t connected
+        to any of them.
+      </p>
+      <p>
+        Minecraft is a trademark of Mojang and Microsoft. The Ultimate Realm server and Beacon are not official Minecraft
+        products or services and are not approved by or associated with Mojang or Microsoft.
       </p>
       <p id="credits">
         The dragon logo is{' '}
