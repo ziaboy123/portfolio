@@ -257,6 +257,8 @@ export default function ProjectDetail({ project, stack, milestones, prev, next }
         </section>
       )}
 
+      {project.disclaimer && <p className="wrap pd-disclaimer">{project.disclaimer}</p>}
+
       <nav className="wrap pd-section pd-nav" aria-label="More projects">
         <Link href={`/projects/${prev.slug}`} transitionTypes={['nav-back']}>
           <small>‹ Previous</small>

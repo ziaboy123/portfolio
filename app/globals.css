@@ -1133,6 +1133,7 @@ span.cap-proof { color: var(--fg-2); padding-left: 12px; }
   text-align: center;
 }
 
+.pd-disclaimer { margin-top: clamp(56px, 7vw, 88px); font-size: 13px; line-height: 1.5; color: var(--fg-3); text-align: center; }
 .pd-nav {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
