@@ -120,6 +120,12 @@ function ScreenshotHero({ project }) {
           </Frame>
         </ViewTransition>
       </motion.div>
+      {project.screenshotCredit && (
+        <p className="pd-shot-credit">
+          <a href={project.screenshotCredit.href} target="_blank" rel="noopener noreferrer">{project.screenshotCredit.text}</a>,{' '}
+          <a href={project.screenshotCredit.licenceHref} target="_blank" rel="noopener noreferrer">{project.screenshotCredit.licence}</a>
+        </p>
+      )}
       {project.banner && (
         <motion.div
           className="pd-banner"
