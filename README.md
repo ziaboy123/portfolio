@@ -35,3 +35,9 @@ Open [http://localhost:3000](http://localhost:3000).
 npm run build
 npm start
 ```
+
+## Licence
+
+The code is [MIT](LICENSE). Some things in the repo belong to others and aren't covered by it: the Yu-Gi-Oh!,
+Minecraft, watch photo and dragon icon content in the screenshots, the GitHub and LinkedIn logos, and two Lucide
+icons (ISC). [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) lists each one with its terms.
